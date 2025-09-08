@@ -11,6 +11,9 @@ from utils.inc_net import IncrementalNet
 from models.base import BaseLearner
 from utils.toolkit import target2onehot, tensor2numpy
 
+# Param for One Cold Cross Entropy
+from utils.occe import OCCELoss
+gamma = 0.01 # tried: [] - should try: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
 
 init_epoch = 200
 init_lr = 0.1
@@ -102,7 +105,10 @@ class Finetune(BaseLearner):
                 inputs, targets = inputs.to(self._device), targets.to(self._device)
                 logits = self._network(inputs)["logits"]
 
-                loss = F.cross_entropy(logits, targets)
+                # TODO : check witch one is correct
+                # loss = F.cross_entropy(logits, targets) + gamma * OCCELoss(logits, target2onehot(targets, self._total_classes))
+                loss = F.cross_entropy(logits, targets) + gamma * OCCELoss(logits, targets)
+
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -153,8 +159,9 @@ class Finetune(BaseLearner):
                 loss_clf = F.cross_entropy(
                     logits[:, self._known_classes :], fake_targets
                 )
+                occe = OCCELoss(logits[:, self._known_classes :], fake_targets)
 
-                loss = loss_clf
+                loss = loss_clf + gamma * occe
 
                 optimizer.zero_grad()
                 loss.backward()
