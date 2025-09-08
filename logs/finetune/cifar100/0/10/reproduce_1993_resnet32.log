@@ -1,0 +1,115 @@
+2025-09-07 13:05:23,628 [trainer.py] => config: ./exps/finetune.json
+2025-09-07 13:05:23,628 [trainer.py] => prefix: reproduce
+2025-09-07 13:05:23,628 [trainer.py] => dataset: cifar100
+2025-09-07 13:05:23,628 [trainer.py] => memory_size: 2000
+2025-09-07 13:05:23,628 [trainer.py] => memory_per_class: 20
+2025-09-07 13:05:23,628 [trainer.py] => fixed_memory: False
+2025-09-07 13:05:23,628 [trainer.py] => shuffle: True
+2025-09-07 13:05:23,628 [trainer.py] => init_cls: 10
+2025-09-07 13:05:23,628 [trainer.py] => increment: 10
+2025-09-07 13:05:23,628 [trainer.py] => model_name: finetune
+2025-09-07 13:05:23,628 [trainer.py] => convnet_type: resnet32
+2025-09-07 13:05:23,628 [trainer.py] => device: [device(type='cuda', index=0), device(type='cuda', index=1), device(type='cuda', index=2), device(type='cuda', index=3)]
+2025-09-07 13:05:23,628 [trainer.py] => seed: 1993
+2025-09-07 13:05:34,283 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-07 13:05:34,735 [trainer.py] => All params: 464154
+2025-09-07 13:05:34,735 [trainer.py] => Trainable params: 464154
+2025-09-07 13:05:34,735 [finetune.py] => Learning on 0-10
+2025-09-07 13:15:17,683 [finetune.py] => Task 0, Epoch 200/200 => Loss 0.046, Train_accy 99.52
+2025-09-07 13:15:18,039 [trainer.py] => No NME accuracy.
+2025-09-07 13:15:18,039 [trainer.py] => CNN: {'total': 91.0, '00-09': 91.0, 'old': 0, 'new': 91.0}
+2025-09-07 13:15:18,039 [trainer.py] => CNN top1 curve: [91.0]
+2025-09-07 13:15:18,039 [trainer.py] => CNN top5 curve: [99.5]
+
+2025-09-07 13:15:18,039 [trainer.py] => Average Accuracy (CNN): 91.0
+2025-09-07 13:15:18,040 [trainer.py] => All params: 464804
+2025-09-07 13:15:18,040 [trainer.py] => Trainable params: 464804
+2025-09-07 13:15:18,042 [finetune.py] => Learning on 10-20
+2025-09-07 13:19:12,858 [finetune.py] => Task 1, Epoch 80/80 => Loss 0.085, Train_accy 98.06
+2025-09-07 13:19:13,287 [trainer.py] => No NME accuracy.
+2025-09-07 13:19:13,287 [trainer.py] => CNN: {'total': 40.9, '00-09': 0.7, '10-19': 81.1, 'old': 0.7, 'new': 81.1}
+2025-09-07 13:19:13,288 [trainer.py] => CNN top1 curve: [91.0, 40.9]
+2025-09-07 13:19:13,288 [trainer.py] => CNN top5 curve: [99.5, 74.85]
+
+2025-09-07 13:19:13,288 [trainer.py] => Average Accuracy (CNN): 65.95
+2025-09-07 13:19:13,288 [trainer.py] => All params: 465454
+2025-09-07 13:19:13,288 [trainer.py] => Trainable params: 465454
+2025-09-07 13:19:13,289 [finetune.py] => Learning on 20-30
+2025-09-07 13:23:13,035 [finetune.py] => Task 2, Epoch 80/80 => Loss 0.042, Train_accy 99.68
+2025-09-07 13:23:13,499 [trainer.py] => No NME accuracy.
+2025-09-07 13:23:13,499 [trainer.py] => CNN: {'total': 30.97, '00-09': 0.0, '10-19': 1.8, '20-29': 91.1, 'old': 0.9, 'new': 91.1}
+2025-09-07 13:23:13,499 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97]
+2025-09-07 13:23:13,499 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93]
+
+2025-09-07 13:23:13,500 [trainer.py] => Average Accuracy (CNN): 54.29
+2025-09-07 13:23:13,500 [trainer.py] => All params: 466104
+2025-09-07 13:23:13,501 [trainer.py] => Trainable params: 466104
+2025-09-07 13:23:13,502 [finetune.py] => Learning on 30-40
+2025-09-07 13:27:17,777 [finetune.py] => Task 3, Epoch 80/80 => Loss 0.044, Train_accy 99.16
+2025-09-07 13:27:18,347 [trainer.py] => No NME accuracy.
+2025-09-07 13:27:18,347 [trainer.py] => CNN: {'total': 21.98, '00-09': 0.0, '10-19': 0.0, '20-29': 1.0, '30-39': 86.9, 'old': 0.33, 'new': 86.9}
+2025-09-07 13:27:18,347 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98]
+2025-09-07 13:27:18,348 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98]
+
+2025-09-07 13:27:18,348 [trainer.py] => Average Accuracy (CNN): 46.2125
+2025-09-07 13:27:18,349 [trainer.py] => All params: 466754
+2025-09-07 13:27:18,349 [trainer.py] => Trainable params: 466754
+2025-09-07 13:27:18,351 [finetune.py] => Learning on 40-50
+2025-09-07 13:31:26,070 [finetune.py] => Task 4, Epoch 80/80 => Loss 0.025, Train_accy 99.58
+2025-09-07 13:31:26,664 [trainer.py] => No NME accuracy.
+2025-09-07 13:31:26,664 [trainer.py] => CNN: {'total': 19.1, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 2.6, '40-49': 92.9, 'old': 0.65, 'new': 92.9}
+2025-09-07 13:31:26,665 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1]
+2025-09-07 13:31:26,665 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38]
+
+2025-09-07 13:31:26,665 [trainer.py] => Average Accuracy (CNN): 40.79
+2025-09-07 13:31:26,666 [trainer.py] => All params: 467404
+2025-09-07 13:31:26,666 [trainer.py] => Trainable params: 467404
+2025-09-07 13:31:26,668 [finetune.py] => Learning on 50-60
+2025-09-07 13:35:37,734 [finetune.py] => Task 5, Epoch 80/80 => Loss 0.061, Train_accy 99.24
+2025-09-07 13:35:38,372 [trainer.py] => No NME accuracy.
+2025-09-07 13:35:38,372 [trainer.py] => CNN: {'total': 15.2, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 0.1, '40-49': 2.6, '50-59': 88.5, 'old': 0.54, 'new': 88.5}
+2025-09-07 13:35:38,372 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1, 15.2]
+2025-09-07 13:35:38,372 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38, 35.8]
+
+2025-09-07 13:35:38,372 [trainer.py] => Average Accuracy (CNN): 36.525
+2025-09-07 13:35:38,372 [trainer.py] => All params: 468054
+2025-09-07 13:35:38,372 [trainer.py] => Trainable params: 468054
+2025-09-07 13:35:38,373 [finetune.py] => Learning on 60-70
+2025-09-07 13:39:54,260 [finetune.py] => Task 6, Epoch 80/80 => Loss 0.024, Train_accy 99.50
+2025-09-07 13:39:54,946 [trainer.py] => No NME accuracy.
+2025-09-07 13:39:54,946 [trainer.py] => CNN: {'total': 13.31, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 0.0, '40-49': 0.0, '50-59': 2.3, '60-69': 90.9, 'old': 0.38, 'new': 90.9}
+2025-09-07 13:39:54,946 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1, 15.2, 13.31]
+2025-09-07 13:39:54,946 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38, 35.8, 29.11]
+
+2025-09-07 13:39:54,946 [trainer.py] => Average Accuracy (CNN): 33.208571428571425
+2025-09-07 13:39:54,947 [trainer.py] => All params: 468704
+2025-09-07 13:39:54,947 [trainer.py] => Trainable params: 468704
+2025-09-07 13:39:54,947 [finetune.py] => Learning on 70-80
+2025-09-07 13:44:14,325 [finetune.py] => Task 7, Epoch 80/80 => Loss 0.031, Train_accy 99.54
+2025-09-07 13:44:15,019 [trainer.py] => No NME accuracy.
+2025-09-07 13:44:15,019 [trainer.py] => CNN: {'total': 11.16, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 0.0, '40-49': 0.0, '50-59': 0.0, '60-69': 1.5, '70-79': 87.8, 'old': 0.21, 'new': 87.8}
+2025-09-07 13:44:15,020 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1, 15.2, 13.31, 11.16]
+2025-09-07 13:44:15,020 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38, 35.8, 29.11, 28.54]
+
+2025-09-07 13:44:15,020 [trainer.py] => Average Accuracy (CNN): 30.452499999999997
+2025-09-07 13:44:15,021 [trainer.py] => All params: 469354
+2025-09-07 13:44:15,021 [trainer.py] => Trainable params: 469354
+2025-09-07 13:44:15,023 [finetune.py] => Learning on 80-90
+2025-09-07 13:48:39,354 [finetune.py] => Task 8, Epoch 80/80 => Loss 0.035, Train_accy 99.34
+2025-09-07 13:48:40,102 [trainer.py] => No NME accuracy.
+2025-09-07 13:48:40,102 [trainer.py] => CNN: {'total': 10.52, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 0.0, '40-49': 0.0, '50-59': 0.0, '60-69': 0.1, '70-79': 3.9, '80-89': 90.7, 'old': 0.5, 'new': 90.7}
+2025-09-07 13:48:40,102 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1, 15.2, 13.31, 11.16, 10.52]
+2025-09-07 13:48:40,102 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38, 35.8, 29.11, 28.54, 24.52]
+
+2025-09-07 13:48:40,102 [trainer.py] => Average Accuracy (CNN): 28.237777777777776
+2025-09-07 13:48:40,103 [trainer.py] => All params: 470004
+2025-09-07 13:48:40,103 [trainer.py] => Trainable params: 470004
+2025-09-07 13:48:40,104 [finetune.py] => Learning on 90-100
+2025-09-07 13:53:08,304 [finetune.py] => Task 9, Epoch 80/80 => Loss 0.058, Train_accy 98.98
+2025-09-07 13:53:09,121 [trainer.py] => No NME accuracy.
+2025-09-07 13:53:09,122 [trainer.py] => CNN: {'total': 8.91, '00-09': 0.0, '10-19': 0.0, '20-29': 0.0, '30-39': 0.0, '40-49': 0.0, '50-59': 0.0, '60-69': 0.0, '70-79': 0.0, '80-89': 3.1, '90-99': 86.0, 'old': 0.34, 'new': 86.0}
+2025-09-07 13:53:09,122 [trainer.py] => CNN top1 curve: [91.0, 40.9, 30.97, 21.98, 19.1, 15.2, 13.31, 11.16, 10.52, 8.91]
+2025-09-07 13:53:09,122 [trainer.py] => CNN top5 curve: [99.5, 74.85, 59.93, 50.98, 43.38, 35.8, 29.11, 28.54, 24.52, 19.87]
+
+2025-09-07 13:53:09,122 [trainer.py] => Average Accuracy (CNN): 26.305
+2025-09-07 13:53:09,125 [trainer.py] => Forgetting (CNN): 88.64444444444445
