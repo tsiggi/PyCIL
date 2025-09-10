@@ -10,6 +10,12 @@ from models.base import BaseLearner
 from utils.inc_net import IncrementalNet
 from utils.toolkit import target2onehot, tensor2numpy
 
+# Param for One Cold Cross Entropy
+from utils.occe import OCCELoss
+occe = OCCELoss()
+enable_occe = True
+gamma = 0.05 # tried: [] - should try: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
+
 EPSILON = 1e-8
 
 
@@ -110,7 +116,9 @@ class Replay(BaseLearner):
                 inputs, targets = inputs.to(self._device), targets.to(self._device)
                 logits = self._network(inputs)["logits"]
 
-                loss = F.cross_entropy(logits, targets)
+                ce = F.cross_entropy(logits, targets)
+                loss = ce if not enable_occe else ce + gamma * occe(logits, targets)
+
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -156,8 +164,10 @@ class Replay(BaseLearner):
                 inputs, targets = inputs.to(self._device), targets.to(self._device)
                 logits = self._network(inputs)["logits"]
 
-                loss_clf = F.cross_entropy(logits, targets)
-                loss = loss_clf
+                # loss_clf = F.cross_entropy(logits, targets)
+                # loss = loss_clf
+                ce = F.cross_entropy(logits, targets)
+                loss = ce if not enable_occe else ce + gamma * occe(logits, targets)
 
                 optimizer.zero_grad()
                 loss.backward()

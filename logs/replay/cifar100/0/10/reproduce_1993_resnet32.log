@@ -174,3 +174,1266 @@
 2025-09-07 18:46:03,720 [trainer.py] => Average Accuracy (NME): 62.787
 2025-09-07 18:46:03,721 [trainer.py] => Forgetting (CNN): 49.3
 2025-09-07 18:46:03,722 [trainer.py] => Forgetting (NME): 34.166666666666664
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.2)
+--------------------------------------------------------
+
+2025-09-09 19:15:18,562 [trainer.py] => config: ./exps/replay.json
+2025-09-09 19:15:18,563 [trainer.py] => prefix: reproduce
+2025-09-09 19:15:18,563 [trainer.py] => dataset: cifar100
+2025-09-09 19:15:18,563 [trainer.py] => memory_size: 2000
+2025-09-09 19:15:18,563 [trainer.py] => memory_per_class: 20
+2025-09-09 19:15:18,563 [trainer.py] => fixed_memory: False
+2025-09-09 19:15:18,563 [trainer.py] => shuffle: True
+2025-09-09 19:15:18,563 [trainer.py] => init_cls: 10
+2025-09-09 19:15:18,563 [trainer.py] => increment: 10
+2025-09-09 19:15:18,563 [trainer.py] => model_name: replay
+2025-09-09 19:15:18,563 [trainer.py] => convnet_type: resnet32
+2025-09-09 19:15:18,563 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-09 19:15:18,563 [trainer.py] => seed: 1993
+2025-09-09 19:15:19,894 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-09 19:15:20,329 [trainer.py] => All params: 464154
+2025-09-09 19:15:20,329 [trainer.py] => Trainable params: 464154
+2025-09-09 19:15:20,329 [replay.py] => Learning on 0-10
+2025-09-09 19:20:00,802 [replay.py] => Task 0, Epoch 200/200 => Loss 0.061, Train_accy 99.38
+2025-09-09 19:20:00,802 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-09 19:20:00,803 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-09 19:20:05,177 [replay.py] => Exemplar size: 2000
+2025-09-09 19:20:05,177 [trainer.py] => CNN: {'total': 89.2, '00-09': 89.2, 'old': 0, 'new': 89.2}
+2025-09-09 19:20:05,177 [trainer.py] => NME: {'total': 89.2, '00-09': 89.2, 'old': 0, 'new': 89.2}
+2025-09-09 19:20:05,177 [trainer.py] => CNN top1 curve: [89.2]
+2025-09-09 19:20:05,178 [trainer.py] => CNN top5 curve: [99.1]
+2025-09-09 19:20:05,178 [trainer.py] => NME top1 curve: [89.2]
+2025-09-09 19:20:05,178 [trainer.py] => NME top5 curve: [99.2]
+
+2025-09-09 19:20:05,178 [trainer.py] => Average Accuracy (CNN): 89.2
+2025-09-09 19:20:05,178 [trainer.py] => Average Accuracy (NME): 89.2
+2025-09-09 19:20:05,179 [trainer.py] => All params: 464804
+2025-09-09 19:20:05,179 [trainer.py] => Trainable params: 464804
+2025-09-09 19:20:05,181 [replay.py] => Learning on 10-20
+2025-09-09 19:22:16,371 [replay.py] => Task 1, Epoch 70/70 => Loss 0.123, Train_accy 98.17
+2025-09-09 19:22:16,371 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-09 19:22:17,782 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-09 19:22:21,909 [replay.py] => Exemplar size: 2000
+2025-09-09 19:22:21,910 [trainer.py] => CNN: {'total': 76.4, '00-09': 74.3, '10-19': 78.5, 'old': 74.3, 'new': 78.5}
+2025-09-09 19:22:21,910 [trainer.py] => NME: {'total': 76.7, '00-09': 76.2, '10-19': 77.2, 'old': 76.2, 'new': 77.2}
+2025-09-09 19:22:21,910 [trainer.py] => CNN top1 curve: [89.2, 76.4]
+2025-09-09 19:22:21,910 [trainer.py] => CNN top5 curve: [99.1, 95.05]
+2025-09-09 19:22:21,910 [trainer.py] => NME top1 curve: [89.2, 76.7]
+2025-09-09 19:22:21,910 [trainer.py] => NME top5 curve: [99.2, 95.5]
+
+2025-09-09 19:22:21,910 [trainer.py] => Average Accuracy (CNN): 82.80000000000001
+2025-09-09 19:22:21,910 [trainer.py] => Average Accuracy (NME): 82.95
+2025-09-09 19:22:21,910 [trainer.py] => All params: 465454
+2025-09-09 19:22:21,911 [trainer.py] => Trainable params: 465454
+2025-09-09 19:22:21,912 [replay.py] => Learning on 20-30
+2025-09-09 19:24:35,591 [replay.py] => Task 2, Epoch 70/70 => Loss 0.078, Train_accy 99.41
+2025-09-09 19:24:35,592 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-09 19:24:38,242 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-09 19:24:42,558 [replay.py] => Exemplar size: 1980
+2025-09-09 19:24:42,558 [trainer.py] => CNN: {'total': 69.33, '00-09': 69.2, '10-19': 51.3, '20-29': 87.5, 'old': 60.25, 'new': 87.5}
+2025-09-09 19:24:42,558 [trainer.py] => NME: {'total': 71.07, '00-09': 71.8, '10-19': 57.5, '20-29': 83.9, 'old': 64.65, 'new': 83.9}
+2025-09-09 19:24:42,558 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33]
+2025-09-09 19:24:42,558 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47]
+2025-09-09 19:24:42,558 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07]
+2025-09-09 19:24:42,558 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03]
+
+2025-09-09 19:24:42,558 [trainer.py] => Average Accuracy (CNN): 78.31
+2025-09-09 19:24:42,558 [trainer.py] => Average Accuracy (NME): 78.99
+2025-09-09 19:24:42,559 [trainer.py] => All params: 466104
+2025-09-09 19:24:42,559 [trainer.py] => Trainable params: 466104
+2025-09-09 19:24:42,560 [replay.py] => Learning on 30-40
+2025-09-09 19:26:58,550 [replay.py] => Task 3, Epoch 70/70 => Loss 0.102, Train_accy 99.37
+2025-09-09 19:26:58,551 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-09 19:27:02,499 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-09 19:27:06,705 [replay.py] => Exemplar size: 2000
+2025-09-09 19:27:06,705 [trainer.py] => CNN: {'total': 62.05, '00-09': 59.5, '10-19': 43.1, '20-29': 61.7, '30-39': 83.9, 'old': 54.77, 'new': 83.9}
+2025-09-09 19:27:06,705 [trainer.py] => NME: {'total': 65.25, '00-09': 64.3, '10-19': 50.0, '20-29': 67.5, '30-39': 79.2, 'old': 60.6, 'new': 79.2}
+2025-09-09 19:27:06,705 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05]
+2025-09-09 19:27:06,706 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88]
+2025-09-09 19:27:06,706 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25]
+2025-09-09 19:27:06,706 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32]
+
+2025-09-09 19:27:06,706 [trainer.py] => Average Accuracy (CNN): 74.245
+2025-09-09 19:27:06,706 [trainer.py] => Average Accuracy (NME): 75.555
+2025-09-09 19:27:06,706 [trainer.py] => All params: 466754
+2025-09-09 19:27:06,707 [trainer.py] => Trainable params: 466754
+2025-09-09 19:27:06,707 [replay.py] => Learning on 40-50
+2025-09-09 19:29:24,296 [replay.py] => Task 4, Epoch 70/70 => Loss 0.091, Train_accy 99.64
+2025-09-09 19:29:24,297 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-09 19:29:29,526 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-09 19:29:33,972 [replay.py] => Exemplar size: 2000
+2025-09-09 19:29:33,972 [trainer.py] => CNN: {'total': 56.44, '00-09': 53.7, '10-19': 36.3, '20-29': 54.5, '30-39': 49.2, '40-49': 88.5, 'old': 48.42, 'new': 88.5}
+2025-09-09 19:29:33,972 [trainer.py] => NME: {'total': 60.6, '00-09': 59.1, '10-19': 44.7, '20-29': 60.2, '30-39': 56.8, '40-49': 82.2, 'old': 55.2, 'new': 82.2}
+2025-09-09 19:29:33,972 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44]
+2025-09-09 19:29:33,972 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5]
+2025-09-09 19:29:33,972 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6]
+2025-09-09 19:29:33,972 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32]
+
+2025-09-09 19:29:33,972 [trainer.py] => Average Accuracy (CNN): 70.684
+2025-09-09 19:29:33,972 [trainer.py] => Average Accuracy (NME): 72.56400000000001
+2025-09-09 19:29:33,973 [trainer.py] => All params: 467404
+2025-09-09 19:29:33,973 [trainer.py] => Trainable params: 467404
+2025-09-09 19:29:33,974 [replay.py] => Learning on 50-60
+2025-09-09 19:31:50,524 [replay.py] => Task 5, Epoch 70/70 => Loss 0.105, Train_accy 99.63
+2025-09-09 19:31:50,525 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-09 19:31:56,906 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-09 19:32:01,322 [replay.py] => Exemplar size: 1980
+2025-09-09 19:32:01,322 [trainer.py] => CNN: {'total': 51.33, '00-09': 47.4, '10-19': 29.5, '20-29': 51.3, '30-39': 41.1, '40-49': 53.5, '50-59': 85.2, 'old': 44.56, 'new': 85.2}
+2025-09-09 19:32:01,322 [trainer.py] => NME: {'total': 55.98, '00-09': 53.0, '10-19': 35.9, '20-29': 55.2, '30-39': 48.4, '40-49': 62.4, '50-59': 81.0, 'old': 50.98, 'new': 81.0}
+2025-09-09 19:32:01,322 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44, 51.33]
+2025-09-09 19:32:01,322 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5, 79.72]
+2025-09-09 19:32:01,322 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6, 55.98]
+2025-09-09 19:32:01,322 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32, 81.62]
+
+2025-09-09 19:32:01,322 [trainer.py] => Average Accuracy (CNN): 67.45833333333333
+2025-09-09 19:32:01,322 [trainer.py] => Average Accuracy (NME): 69.80000000000001
+2025-09-09 19:32:01,323 [trainer.py] => All params: 468054
+2025-09-09 19:32:01,323 [trainer.py] => Trainable params: 468054
+2025-09-09 19:32:01,324 [replay.py] => Learning on 60-70
+2025-09-09 19:34:17,876 [replay.py] => Task 6, Epoch 70/70 => Loss 0.099, Train_accy 99.67
+2025-09-09 19:34:17,877 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-09 19:34:25,646 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-09 19:34:30,250 [replay.py] => Exemplar size: 1960
+2025-09-09 19:34:30,250 [trainer.py] => CNN: {'total': 48.3, '00-09': 47.6, '10-19': 26.6, '20-29': 49.1, '30-39': 35.1, '40-49': 47.4, '50-59': 42.8, '60-69': 89.5, 'old': 41.43, 'new': 89.5}
+2025-09-09 19:34:30,250 [trainer.py] => NME: {'total': 52.84, '00-09': 50.4, '10-19': 31.8, '20-29': 54.2, '30-39': 43.3, '40-49': 55.6, '50-59': 51.1, '60-69': 83.5, 'old': 47.73, 'new': 83.5}
+2025-09-09 19:34:30,250 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44, 51.33, 48.3]
+2025-09-09 19:34:30,250 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5, 79.72, 77.46]
+2025-09-09 19:34:30,250 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6, 55.98, 52.84]
+2025-09-09 19:34:30,250 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32, 81.62, 79.14]
+
+2025-09-09 19:34:30,250 [trainer.py] => Average Accuracy (CNN): 64.72142857142858
+2025-09-09 19:34:30,250 [trainer.py] => Average Accuracy (NME): 67.37714285714287
+2025-09-09 19:34:30,251 [trainer.py] => All params: 468704
+2025-09-09 19:34:30,251 [trainer.py] => Trainable params: 468704
+2025-09-09 19:34:30,252 [replay.py] => Learning on 70-80
+2025-09-09 19:36:48,519 [replay.py] => Task 7, Epoch 70/70 => Loss 0.130, Train_accy 99.61
+2025-09-09 19:36:48,520 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-09 19:36:57,387 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-09 19:37:02,093 [replay.py] => Exemplar size: 2000
+2025-09-09 19:37:02,093 [trainer.py] => CNN: {'total': 42.31, '00-09': 41.4, '10-19': 25.4, '20-29': 44.2, '30-39': 30.9, '40-49': 40.1, '50-59': 26.9, '60-69': 45.2, '70-79': 84.4, 'old': 36.3, 'new': 84.4}
+2025-09-09 19:37:02,093 [trainer.py] => NME: {'total': 48.21, '00-09': 46.7, '10-19': 29.5, '20-29': 49.8, '30-39': 38.2, '40-49': 46.3, '50-59': 40.4, '60-69': 57.0, '70-79': 77.8, 'old': 43.99, 'new': 77.8}
+2025-09-09 19:37:02,093 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44, 51.33, 48.3, 42.31]
+2025-09-09 19:37:02,093 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5, 79.72, 77.46, 74.71]
+2025-09-09 19:37:02,093 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6, 55.98, 52.84, 48.21]
+2025-09-09 19:37:02,093 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32, 81.62, 79.14, 76.66]
+
+2025-09-09 19:37:02,093 [trainer.py] => Average Accuracy (CNN): 61.92
+2025-09-09 19:37:02,093 [trainer.py] => Average Accuracy (NME): 64.98125000000002
+2025-09-09 19:37:02,094 [trainer.py] => All params: 469354
+2025-09-09 19:37:02,094 [trainer.py] => Trainable params: 469354
+2025-09-09 19:37:02,095 [replay.py] => Learning on 80-90
+2025-09-09 19:39:22,378 [replay.py] => Task 8, Epoch 70/70 => Loss 0.119, Train_accy 99.81
+2025-09-09 19:39:22,379 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-09 19:39:32,527 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-09 19:39:37,111 [replay.py] => Exemplar size: 1980
+2025-09-09 19:39:37,111 [trainer.py] => CNN: {'total': 40.08, '00-09': 37.3, '10-19': 21.8, '20-29': 37.2, '30-39': 29.8, '40-49': 38.6, '50-59': 32.5, '60-69': 34.3, '70-79': 39.4, '80-89': 89.8, 'old': 33.86, 'new': 89.8}
+2025-09-09 19:39:37,111 [trainer.py] => NME: {'total': 46.4, '00-09': 42.7, '10-19': 26.8, '20-29': 47.4, '30-39': 38.8, '40-49': 46.9, '50-59': 39.7, '60-69': 47.0, '70-79': 48.5, '80-89': 79.8, 'old': 42.22, 'new': 79.8}
+2025-09-09 19:39:37,111 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44, 51.33, 48.3, 42.31, 40.08]
+2025-09-09 19:39:37,111 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5, 79.72, 77.46, 74.71, 71.52]
+2025-09-09 19:39:37,111 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6, 55.98, 52.84, 48.21, 46.4]
+2025-09-09 19:39:37,111 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32, 81.62, 79.14, 76.66, 74.1]
+
+2025-09-09 19:39:37,111 [trainer.py] => Average Accuracy (CNN): 59.49333333333334
+2025-09-09 19:39:37,111 [trainer.py] => Average Accuracy (NME): 62.91666666666668
+2025-09-09 19:39:37,111 [trainer.py] => All params: 470004
+2025-09-09 19:39:37,111 [trainer.py] => Trainable params: 470004
+2025-09-09 19:39:37,112 [replay.py] => Learning on 90-100
+2025-09-09 19:41:55,806 [replay.py] => Task 9, Epoch 70/70 => Loss 0.135, Train_accy 99.64
+2025-09-09 19:41:55,806 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-09 19:42:07,279 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-09 19:42:12,158 [replay.py] => Exemplar size: 2000
+2025-09-09 19:42:12,158 [trainer.py] => CNN: {'total': 37.48, '00-09': 33.0, '10-19': 23.4, '20-29': 37.2, '30-39': 31.0, '40-49': 35.0, '50-59': 24.8, '60-69': 35.4, '70-79': 32.3, '80-89': 40.7, '90-99': 82.0, 'old': 32.53, 'new': 82.0}
+2025-09-09 19:42:12,158 [trainer.py] => NME: {'total': 43.53, '00-09': 40.9, '10-19': 27.7, '20-29': 43.1, '30-39': 38.0, '40-49': 40.8, '50-59': 32.9, '60-69': 44.2, '70-79': 42.3, '80-89': 51.7, '90-99': 73.7, 'old': 40.18, 'new': 73.7}
+2025-09-09 19:42:12,158 [trainer.py] => CNN top1 curve: [89.2, 76.4, 69.33, 62.05, 56.44, 51.33, 48.3, 42.31, 40.08, 37.48]
+2025-09-09 19:42:12,159 [trainer.py] => CNN top5 curve: [99.1, 95.05, 90.47, 86.88, 83.5, 79.72, 77.46, 74.71, 71.52, 69.74]
+2025-09-09 19:42:12,159 [trainer.py] => NME top1 curve: [89.2, 76.7, 71.07, 65.25, 60.6, 55.98, 52.84, 48.21, 46.4, 43.53]
+2025-09-09 19:42:12,159 [trainer.py] => NME top5 curve: [99.2, 95.5, 92.03, 88.32, 85.32, 81.62, 79.14, 76.66, 74.1, 72.42]
+
+2025-09-09 19:42:12,159 [trainer.py] => Average Accuracy (CNN): 57.29200000000001
+2025-09-09 19:42:12,159 [trainer.py] => Average Accuracy (NME): 60.97800000000001
+2025-09-09 19:42:12,159 [trainer.py] => Forgetting (CNN): 53.74444444444445
+2025-09-09 19:42:12,160 [trainer.py] => Forgetting (NME): 41.35555555555556
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.1)
+--------------------------------------------------------
+2025-09-09 19:51:17,345 [trainer.py] => config: ./exps/replay.json
+2025-09-09 19:51:17,345 [trainer.py] => prefix: reproduce
+2025-09-09 19:51:17,345 [trainer.py] => dataset: cifar100
+2025-09-09 19:51:17,345 [trainer.py] => memory_size: 2000
+2025-09-09 19:51:17,345 [trainer.py] => memory_per_class: 20
+2025-09-09 19:51:17,345 [trainer.py] => fixed_memory: False
+2025-09-09 19:51:17,345 [trainer.py] => shuffle: True
+2025-09-09 19:51:17,345 [trainer.py] => init_cls: 10
+2025-09-09 19:51:17,345 [trainer.py] => increment: 10
+2025-09-09 19:51:17,345 [trainer.py] => model_name: replay
+2025-09-09 19:51:17,345 [trainer.py] => convnet_type: resnet32
+2025-09-09 19:51:17,345 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-09 19:51:17,345 [trainer.py] => seed: 1993
+2025-09-09 19:51:18,611 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-09 19:51:19,040 [trainer.py] => All params: 464154
+2025-09-09 19:51:19,041 [trainer.py] => Trainable params: 464154
+2025-09-09 19:51:19,041 [replay.py] => Learning on 0-10
+2025-09-09 19:55:59,879 [replay.py] => Task 0, Epoch 200/200 => Loss 0.059, Train_accy 99.30
+2025-09-09 19:55:59,880 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-09 19:55:59,880 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-09 19:56:04,503 [replay.py] => Exemplar size: 2000
+2025-09-09 19:56:04,503 [trainer.py] => CNN: {'total': 90.2, '00-09': 90.2, 'old': 0, 'new': 90.2}
+2025-09-09 19:56:04,504 [trainer.py] => NME: {'total': 89.9, '00-09': 89.9, 'old': 0, 'new': 89.9}
+2025-09-09 19:56:04,504 [trainer.py] => CNN top1 curve: [90.2]
+2025-09-09 19:56:04,504 [trainer.py] => CNN top5 curve: [99.0]
+2025-09-09 19:56:04,504 [trainer.py] => NME top1 curve: [89.9]
+2025-09-09 19:56:04,504 [trainer.py] => NME top5 curve: [99.3]
+
+2025-09-09 19:56:04,504 [trainer.py] => Average Accuracy (CNN): 90.2
+2025-09-09 19:56:04,504 [trainer.py] => Average Accuracy (NME): 89.9
+2025-09-09 19:56:04,505 [trainer.py] => All params: 464804
+2025-09-09 19:56:04,506 [trainer.py] => Trainable params: 464804
+2025-09-09 19:56:04,507 [replay.py] => Learning on 10-20
+2025-09-09 19:58:19,430 [replay.py] => Task 1, Epoch 70/70 => Loss 0.110, Train_accy 98.19
+2025-09-09 19:58:19,431 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-09 19:58:20,860 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-09 19:58:25,141 [replay.py] => Exemplar size: 2000
+2025-09-09 19:58:25,141 [trainer.py] => CNN: {'total': 76.9, '00-09': 76.1, '10-19': 77.7, 'old': 76.1, 'new': 77.7}
+2025-09-09 19:58:25,141 [trainer.py] => NME: {'total': 77.3, '00-09': 78.6, '10-19': 76.0, 'old': 78.6, 'new': 76.0}
+2025-09-09 19:58:25,141 [trainer.py] => CNN top1 curve: [90.2, 76.9]
+2025-09-09 19:58:25,141 [trainer.py] => CNN top5 curve: [99.0, 95.4]
+2025-09-09 19:58:25,141 [trainer.py] => NME top1 curve: [89.9, 77.3]
+2025-09-09 19:58:25,141 [trainer.py] => NME top5 curve: [99.3, 95.8]
+
+2025-09-09 19:58:25,141 [trainer.py] => Average Accuracy (CNN): 83.55000000000001
+2025-09-09 19:58:25,141 [trainer.py] => Average Accuracy (NME): 83.6
+2025-09-09 19:58:25,142 [trainer.py] => All params: 465454
+2025-09-09 19:58:25,142 [trainer.py] => Trainable params: 465454
+2025-09-09 19:58:25,143 [replay.py] => Learning on 20-30
+2025-09-09 20:00:41,156 [replay.py] => Task 2, Epoch 70/70 => Loss 0.069, Train_accy 99.43
+2025-09-09 20:00:41,157 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-09 20:00:43,995 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-09 20:00:48,382 [replay.py] => Exemplar size: 1980
+2025-09-09 20:00:48,383 [trainer.py] => CNN: {'total': 70.47, '00-09': 70.9, '10-19': 51.7, '20-29': 88.8, 'old': 61.3, 'new': 88.8}
+2025-09-09 20:00:48,383 [trainer.py] => NME: {'total': 72.33, '00-09': 74.1, '10-19': 57.4, '20-29': 85.5, 'old': 65.75, 'new': 85.5}
+2025-09-09 20:00:48,383 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47]
+2025-09-09 20:00:48,383 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73]
+2025-09-09 20:00:48,383 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33]
+2025-09-09 20:00:48,383 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93]
+
+2025-09-09 20:00:48,383 [trainer.py] => Average Accuracy (CNN): 79.19000000000001
+2025-09-09 20:00:48,383 [trainer.py] => Average Accuracy (NME): 79.84333333333332
+2025-09-09 20:00:48,384 [trainer.py] => All params: 466104
+2025-09-09 20:00:48,384 [trainer.py] => Trainable params: 466104
+2025-09-09 20:00:48,385 [replay.py] => Learning on 30-40
+2025-09-09 20:03:02,564 [replay.py] => Task 3, Epoch 70/70 => Loss 0.090, Train_accy 99.31
+2025-09-09 20:03:02,565 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-09 20:03:06,769 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-09 20:03:11,257 [replay.py] => Exemplar size: 2000
+2025-09-09 20:03:11,257 [trainer.py] => CNN: {'total': 62.3, '00-09': 61.2, '10-19': 45.0, '20-29': 59.7, '30-39': 83.3, 'old': 55.3, 'new': 83.3}
+2025-09-09 20:03:11,257 [trainer.py] => NME: {'total': 66.12, '00-09': 65.9, '10-19': 51.5, '20-29': 67.6, '30-39': 79.5, 'old': 61.67, 'new': 79.5}
+2025-09-09 20:03:11,257 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3]
+2025-09-09 20:03:11,257 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62]
+2025-09-09 20:03:11,257 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12]
+2025-09-09 20:03:11,257 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35]
+
+2025-09-09 20:03:11,257 [trainer.py] => Average Accuracy (CNN): 74.9675
+2025-09-09 20:03:11,257 [trainer.py] => Average Accuracy (NME): 76.4125
+2025-09-09 20:03:11,257 [trainer.py] => All params: 466754
+2025-09-09 20:03:11,258 [trainer.py] => Trainable params: 466754
+2025-09-09 20:03:11,258 [replay.py] => Learning on 40-50
+2025-09-09 20:05:28,870 [replay.py] => Task 4, Epoch 70/70 => Loss 0.075, Train_accy 99.70
+2025-09-09 20:05:28,871 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-09 20:05:34,348 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-09 20:05:38,926 [replay.py] => Exemplar size: 2000
+2025-09-09 20:05:38,926 [trainer.py] => CNN: {'total': 57.12, '00-09': 55.8, '10-19': 37.8, '20-29': 54.8, '30-39': 48.0, '40-49': 89.2, 'old': 49.1, 'new': 89.2}
+2025-09-09 20:05:38,926 [trainer.py] => NME: {'total': 61.54, '00-09': 61.7, '10-19': 44.3, '20-29': 62.7, '30-39': 57.6, '40-49': 81.4, 'old': 56.58, 'new': 81.4}
+2025-09-09 20:05:38,926 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12]
+2025-09-09 20:05:38,926 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2]
+2025-09-09 20:05:38,926 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54]
+2025-09-09 20:05:38,927 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48]
+
+2025-09-09 20:05:38,927 [trainer.py] => Average Accuracy (CNN): 71.398
+2025-09-09 20:05:38,927 [trainer.py] => Average Accuracy (NME): 73.438
+2025-09-09 20:05:38,927 [trainer.py] => All params: 467404
+2025-09-09 20:05:38,927 [trainer.py] => Trainable params: 467404
+2025-09-09 20:05:38,928 [replay.py] => Learning on 50-60
+2025-09-09 20:07:57,157 [replay.py] => Task 5, Epoch 70/70 => Loss 0.094, Train_accy 99.39
+2025-09-09 20:07:57,158 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-09 20:08:03,946 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-09 20:08:08,358 [replay.py] => Exemplar size: 1980
+2025-09-09 20:08:08,358 [trainer.py] => CNN: {'total': 52.12, '00-09': 49.0, '10-19': 36.3, '20-29': 49.4, '30-39': 41.8, '40-49': 52.0, '50-59': 84.2, 'old': 45.7, 'new': 84.2}
+2025-09-09 20:08:08,358 [trainer.py] => NME: {'total': 57.52, '00-09': 55.1, '10-19': 41.8, '20-29': 56.3, '30-39': 51.2, '40-49': 63.5, '50-59': 77.2, 'old': 53.58, 'new': 77.2}
+2025-09-09 20:08:08,358 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12, 52.12]
+2025-09-09 20:08:08,358 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2, 81.18]
+2025-09-09 20:08:08,358 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54, 57.52]
+2025-09-09 20:08:08,358 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48, 82.22]
+
+2025-09-09 20:08:08,358 [trainer.py] => Average Accuracy (CNN): 68.185
+2025-09-09 20:08:08,358 [trainer.py] => Average Accuracy (NME): 70.785
+2025-09-09 20:08:08,359 [trainer.py] => All params: 468054
+2025-09-09 20:08:08,359 [trainer.py] => Trainable params: 468054
+2025-09-09 20:08:08,360 [replay.py] => Learning on 60-70
+2025-09-09 20:10:28,038 [replay.py] => Task 6, Epoch 70/70 => Loss 0.085, Train_accy 99.66
+2025-09-09 20:10:28,039 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-09 20:10:35,934 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-09 20:10:40,610 [replay.py] => Exemplar size: 1960
+2025-09-09 20:10:40,611 [trainer.py] => CNN: {'total': 48.56, '00-09': 45.7, '10-19': 31.1, '20-29': 50.5, '30-39': 35.7, '40-49': 48.4, '50-59': 39.4, '60-69': 89.1, 'old': 41.8, 'new': 89.1}
+2025-09-09 20:10:40,611 [trainer.py] => NME: {'total': 54.1, '00-09': 50.9, '10-19': 37.8, '20-29': 55.1, '30-39': 44.3, '40-49': 56.2, '50-59': 51.0, '60-69': 83.4, 'old': 49.22, 'new': 83.4}
+2025-09-09 20:10:40,611 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12, 52.12, 48.56]
+2025-09-09 20:10:40,611 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2, 81.18, 78.39]
+2025-09-09 20:10:40,611 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54, 57.52, 54.1]
+2025-09-09 20:10:40,611 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48, 82.22, 80.56]
+
+2025-09-09 20:10:40,611 [trainer.py] => Average Accuracy (CNN): 65.38142857142857
+2025-09-09 20:10:40,611 [trainer.py] => Average Accuracy (NME): 68.40142857142857
+2025-09-09 20:10:40,611 [trainer.py] => All params: 468704
+2025-09-09 20:10:40,611 [trainer.py] => Trainable params: 468704
+2025-09-09 20:10:40,612 [replay.py] => Learning on 70-80
+2025-09-09 20:12:58,744 [replay.py] => Task 7, Epoch 70/70 => Loss 0.103, Train_accy 99.48
+2025-09-09 20:12:58,745 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-09 20:13:08,232 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-09 20:13:13,120 [replay.py] => Exemplar size: 2000
+2025-09-09 20:13:13,120 [trainer.py] => CNN: {'total': 43.11, '00-09': 42.1, '10-19': 29.5, '20-29': 44.0, '30-39': 32.0, '40-49': 39.7, '50-59': 27.7, '60-69': 45.9, '70-79': 84.0, 'old': 37.27, 'new': 84.0}
+2025-09-09 20:13:13,120 [trainer.py] => NME: {'total': 49.44, '00-09': 48.2, '10-19': 35.2, '20-29': 51.7, '30-39': 40.7, '40-49': 47.5, '50-59': 39.0, '60-69': 56.6, '70-79': 76.6, 'old': 45.56, 'new': 76.6}
+2025-09-09 20:13:13,120 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12, 52.12, 48.56, 43.11]
+2025-09-09 20:13:13,120 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2, 81.18, 78.39, 75.84]
+2025-09-09 20:13:13,120 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54, 57.52, 54.1, 49.44]
+2025-09-09 20:13:13,120 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48, 82.22, 80.56, 77.8]
+
+2025-09-09 20:13:13,120 [trainer.py] => Average Accuracy (CNN): 62.597500000000004
+2025-09-09 20:13:13,120 [trainer.py] => Average Accuracy (NME): 66.03125
+2025-09-09 20:13:13,121 [trainer.py] => All params: 469354
+2025-09-09 20:13:13,121 [trainer.py] => Trainable params: 469354
+2025-09-09 20:13:13,121 [replay.py] => Learning on 80-90
+2025-09-09 20:15:31,731 [replay.py] => Task 8, Epoch 70/70 => Loss 0.095, Train_accy 99.80
+2025-09-09 20:15:31,731 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-09 20:15:42,569 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-09 20:15:47,495 [replay.py] => Exemplar size: 1980
+2025-09-09 20:15:47,495 [trainer.py] => CNN: {'total': 41.13, '00-09': 41.1, '10-19': 26.1, '20-29': 38.4, '30-39': 32.3, '40-49': 38.6, '50-59': 32.2, '60-69': 35.5, '70-79': 38.0, '80-89': 88.0, 'old': 35.28, 'new': 88.0}
+2025-09-09 20:15:47,495 [trainer.py] => NME: {'total': 47.03, '00-09': 46.8, '10-19': 30.0, '20-29': 46.1, '30-39': 40.3, '40-49': 46.9, '50-59': 39.2, '60-69': 46.6, '70-79': 48.8, '80-89': 78.6, 'old': 43.09, 'new': 78.6}
+2025-09-09 20:15:47,495 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12, 52.12, 48.56, 43.11, 41.13]
+2025-09-09 20:15:47,495 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2, 81.18, 78.39, 75.84, 73.6]
+2025-09-09 20:15:47,495 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54, 57.52, 54.1, 49.44, 47.03]
+2025-09-09 20:15:47,495 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48, 82.22, 80.56, 77.8, 75.98]
+
+2025-09-09 20:15:47,495 [trainer.py] => Average Accuracy (CNN): 60.21222222222223
+2025-09-09 20:15:47,495 [trainer.py] => Average Accuracy (NME): 63.919999999999995
+2025-09-09 20:15:47,495 [trainer.py] => All params: 470004
+2025-09-09 20:15:47,496 [trainer.py] => Trainable params: 470004
+2025-09-09 20:15:47,496 [replay.py] => Learning on 90-100
+2025-09-09 20:18:07,410 [replay.py] => Task 9, Epoch 70/70 => Loss 0.105, Train_accy 99.68
+2025-09-09 20:18:07,410 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-09 20:18:19,576 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-09 20:18:24,441 [replay.py] => Exemplar size: 2000
+2025-09-09 20:18:24,441 [trainer.py] => CNN: {'total': 39.38, '00-09': 35.4, '10-19': 26.3, '20-29': 36.9, '30-39': 31.3, '40-49': 39.0, '50-59': 27.2, '60-69': 38.0, '70-79': 33.7, '80-89': 42.3, '90-99': 83.7, 'old': 34.46, 'new': 83.7}
+2025-09-09 20:18:24,442 [trainer.py] => NME: {'total': 45.11, '00-09': 44.2, '10-19': 31.3, '20-29': 45.7, '30-39': 38.1, '40-49': 45.7, '50-59': 35.3, '60-69': 44.8, '70-79': 40.2, '80-89': 52.4, '90-99': 73.4, 'old': 41.97, 'new': 73.4}
+2025-09-09 20:18:24,442 [trainer.py] => CNN top1 curve: [90.2, 76.9, 70.47, 62.3, 57.12, 52.12, 48.56, 43.11, 41.13, 39.38]
+2025-09-09 20:18:24,442 [trainer.py] => CNN top5 curve: [99.0, 95.4, 91.73, 87.62, 85.2, 81.18, 78.39, 75.84, 73.6, 70.12]
+2025-09-09 20:18:24,442 [trainer.py] => NME top1 curve: [89.9, 77.3, 72.33, 66.12, 61.54, 57.52, 54.1, 49.44, 47.03, 45.11]
+2025-09-09 20:18:24,442 [trainer.py] => NME top5 curve: [99.3, 95.8, 92.93, 89.35, 86.48, 82.22, 80.56, 77.8, 75.98, 73.14]
+
+2025-09-09 20:18:24,442 [trainer.py] => Average Accuracy (CNN): 58.129000000000005
+2025-09-09 20:18:24,442 [trainer.py] => Average Accuracy (NME): 62.039
+2025-09-09 20:18:24,442 [trainer.py] => Forgetting (CNN): 51.6
+2025-09-09 20:18:24,443 [trainer.py] => Forgetting (NME): 38.93333333333334
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.5)
+--------------------------------------------------------
+
+2025-09-09 20:58:41,984 [trainer.py] => config: ./exps/replay.json
+2025-09-09 20:58:41,984 [trainer.py] => prefix: reproduce
+2025-09-09 20:58:41,984 [trainer.py] => dataset: cifar100
+2025-09-09 20:58:41,984 [trainer.py] => memory_size: 2000
+2025-09-09 20:58:41,984 [trainer.py] => memory_per_class: 20
+2025-09-09 20:58:41,984 [trainer.py] => fixed_memory: False
+2025-09-09 20:58:41,984 [trainer.py] => shuffle: True
+2025-09-09 20:58:41,984 [trainer.py] => init_cls: 10
+2025-09-09 20:58:41,984 [trainer.py] => increment: 10
+2025-09-09 20:58:41,984 [trainer.py] => model_name: replay
+2025-09-09 20:58:41,984 [trainer.py] => convnet_type: resnet32
+2025-09-09 20:58:41,984 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-09 20:58:41,984 [trainer.py] => seed: 1993
+2025-09-09 20:58:43,274 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-09 20:58:43,713 [trainer.py] => All params: 464154
+2025-09-09 20:58:43,713 [trainer.py] => Trainable params: 464154
+2025-09-09 20:58:43,713 [replay.py] => Learning on 0-10
+2025-09-09 21:03:24,613 [replay.py] => Task 0, Epoch 200/200 => Loss 0.083, Train_accy 99.22
+2025-09-09 21:03:24,614 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-09 21:03:24,614 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-09 21:03:29,160 [replay.py] => Exemplar size: 2000
+2025-09-09 21:03:29,161 [trainer.py] => CNN: {'total': 90.2, '00-09': 90.2, 'old': 0, 'new': 90.2}
+2025-09-09 21:03:29,161 [trainer.py] => NME: {'total': 90.3, '00-09': 90.3, 'old': 0, 'new': 90.3}
+2025-09-09 21:03:29,161 [trainer.py] => CNN top1 curve: [90.2]
+2025-09-09 21:03:29,161 [trainer.py] => CNN top5 curve: [98.9]
+2025-09-09 21:03:29,161 [trainer.py] => NME top1 curve: [90.3]
+2025-09-09 21:03:29,161 [trainer.py] => NME top5 curve: [98.8]
+
+2025-09-09 21:03:29,161 [trainer.py] => Average Accuracy (CNN): 90.2
+2025-09-09 21:03:29,161 [trainer.py] => Average Accuracy (NME): 90.3
+2025-09-09 21:03:29,161 [trainer.py] => All params: 464804
+2025-09-09 21:03:29,162 [trainer.py] => Trainable params: 464804
+2025-09-09 21:03:29,162 [replay.py] => Learning on 10-20
+2025-09-09 21:05:42,543 [replay.py] => Task 1, Epoch 70/70 => Loss 0.140, Train_accy 97.90
+2025-09-09 21:05:42,543 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-09 21:05:43,997 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-09 21:05:48,320 [replay.py] => Exemplar size: 2000
+2025-09-09 21:05:48,320 [trainer.py] => CNN: {'total': 76.8, '00-09': 76.8, '10-19': 76.8, 'old': 76.8, 'new': 76.8}
+2025-09-09 21:05:48,320 [trainer.py] => NME: {'total': 76.8, '00-09': 77.8, '10-19': 75.8, 'old': 77.8, 'new': 75.8}
+2025-09-09 21:05:48,320 [trainer.py] => CNN top1 curve: [90.2, 76.8]
+2025-09-09 21:05:48,320 [trainer.py] => CNN top5 curve: [98.9, 95.25]
+2025-09-09 21:05:48,320 [trainer.py] => NME top1 curve: [90.3, 76.8]
+2025-09-09 21:05:48,320 [trainer.py] => NME top5 curve: [98.8, 95.45]
+
+2025-09-09 21:05:48,320 [trainer.py] => Average Accuracy (CNN): 83.5
+2025-09-09 21:05:48,321 [trainer.py] => Average Accuracy (NME): 83.55
+2025-09-09 21:05:48,321 [trainer.py] => All params: 465454
+2025-09-09 21:05:48,321 [trainer.py] => Trainable params: 465454
+2025-09-09 21:05:48,322 [replay.py] => Learning on 20-30
+2025-09-09 21:08:03,767 [replay.py] => Task 2, Epoch 70/70 => Loss 0.091, Train_accy 99.11
+2025-09-09 21:08:03,768 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-09 21:08:06,760 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-09 21:08:11,166 [replay.py] => Exemplar size: 1980
+2025-09-09 21:08:11,166 [trainer.py] => CNN: {'total': 70.4, '00-09': 70.4, '10-19': 52.8, '20-29': 88.0, 'old': 61.6, 'new': 88.0}
+2025-09-09 21:08:11,166 [trainer.py] => NME: {'total': 71.5, '00-09': 72.4, '10-19': 56.2, '20-29': 85.9, 'old': 64.3, 'new': 85.9}
+2025-09-09 21:08:11,166 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4]
+2025-09-09 21:08:11,166 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63]
+2025-09-09 21:08:11,166 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5]
+2025-09-09 21:08:11,166 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47]
+
+2025-09-09 21:08:11,166 [trainer.py] => Average Accuracy (CNN): 79.13333333333334
+2025-09-09 21:08:11,166 [trainer.py] => Average Accuracy (NME): 79.53333333333333
+2025-09-09 21:08:11,167 [trainer.py] => All params: 466104
+2025-09-09 21:08:11,167 [trainer.py] => Trainable params: 466104
+2025-09-09 21:08:11,168 [replay.py] => Learning on 30-40
+2025-09-09 21:10:28,705 [replay.py] => Task 3, Epoch 70/70 => Loss 0.118, Train_accy 98.87
+2025-09-09 21:10:28,706 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-09 21:10:32,842 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-09 21:10:37,288 [replay.py] => Exemplar size: 2000
+2025-09-09 21:10:37,288 [trainer.py] => CNN: {'total': 62.52, '00-09': 61.2, '10-19': 44.6, '20-29': 60.5, '30-39': 83.8, 'old': 55.43, 'new': 83.8}
+2025-09-09 21:10:37,288 [trainer.py] => NME: {'total': 64.82, '00-09': 63.9, '10-19': 48.2, '20-29': 66.4, '30-39': 80.8, 'old': 59.5, 'new': 80.8}
+2025-09-09 21:10:37,289 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52]
+2025-09-09 21:10:37,289 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98]
+2025-09-09 21:10:37,289 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82]
+2025-09-09 21:10:37,289 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88]
+
+2025-09-09 21:10:37,289 [trainer.py] => Average Accuracy (CNN): 74.98
+2025-09-09 21:10:37,289 [trainer.py] => Average Accuracy (NME): 75.85499999999999
+2025-09-09 21:10:37,289 [trainer.py] => All params: 466754
+2025-09-09 21:10:37,289 [trainer.py] => Trainable params: 466754
+2025-09-09 21:10:37,290 [replay.py] => Learning on 40-50
+2025-09-09 21:12:53,735 [replay.py] => Task 4, Epoch 70/70 => Loss 0.097, Train_accy 99.49
+2025-09-09 21:12:53,736 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-09 21:12:59,389 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-09 21:13:04,046 [replay.py] => Exemplar size: 2000
+2025-09-09 21:13:04,046 [trainer.py] => CNN: {'total': 57.22, '00-09': 56.2, '10-19': 37.8, '20-29': 52.9, '30-39': 49.3, '40-49': 89.9, 'old': 49.05, 'new': 89.9}
+2025-09-09 21:13:04,046 [trainer.py] => NME: {'total': 60.48, '00-09': 59.7, '10-19': 41.4, '20-29': 58.7, '30-39': 57.3, '40-49': 85.3, 'old': 54.28, 'new': 85.3}
+2025-09-09 21:13:04,046 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22]
+2025-09-09 21:13:04,046 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0]
+2025-09-09 21:13:04,046 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48]
+2025-09-09 21:13:04,046 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46]
+
+2025-09-09 21:13:04,046 [trainer.py] => Average Accuracy (CNN): 71.428
+2025-09-09 21:13:04,046 [trainer.py] => Average Accuracy (NME): 72.78
+2025-09-09 21:13:04,047 [trainer.py] => All params: 467404
+2025-09-09 21:13:04,047 [trainer.py] => Trainable params: 467404
+2025-09-09 21:13:04,047 [replay.py] => Learning on 50-60
+2025-09-09 21:15:23,159 [replay.py] => Task 5, Epoch 70/70 => Loss 0.131, Train_accy 99.31
+2025-09-09 21:15:23,159 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-09 21:15:30,120 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-09 21:15:34,826 [replay.py] => Exemplar size: 1980
+2025-09-09 21:15:34,826 [trainer.py] => CNN: {'total': 51.53, '00-09': 47.4, '10-19': 34.6, '20-29': 48.6, '30-39': 40.6, '40-49': 53.3, '50-59': 84.7, 'old': 44.9, 'new': 84.7}
+2025-09-09 21:15:34,826 [trainer.py] => NME: {'total': 55.43, '00-09': 51.5, '10-19': 38.8, '20-29': 55.3, '30-39': 46.7, '40-49': 59.1, '50-59': 81.2, 'old': 50.28, 'new': 81.2}
+2025-09-09 21:15:34,826 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22, 51.53]
+2025-09-09 21:15:34,826 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0, 78.78]
+2025-09-09 21:15:34,826 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48, 55.43]
+2025-09-09 21:15:34,826 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46, 80.78]
+
+2025-09-09 21:15:34,826 [trainer.py] => Average Accuracy (CNN): 68.11166666666666
+2025-09-09 21:15:34,826 [trainer.py] => Average Accuracy (NME): 69.88833333333334
+2025-09-09 21:15:34,827 [trainer.py] => All params: 468054
+2025-09-09 21:15:34,827 [trainer.py] => Trainable params: 468054
+2025-09-09 21:15:34,827 [replay.py] => Learning on 60-70
+2025-09-09 21:17:54,777 [replay.py] => Task 6, Epoch 70/70 => Loss 0.127, Train_accy 99.54
+2025-09-09 21:17:54,778 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-09 21:18:03,261 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-09 21:18:08,093 [replay.py] => Exemplar size: 1960
+2025-09-09 21:18:08,093 [trainer.py] => CNN: {'total': 47.7, '00-09': 47.9, '10-19': 27.2, '20-29': 47.1, '30-39': 32.4, '40-49': 49.9, '50-59': 41.6, '60-69': 87.8, 'old': 41.02, 'new': 87.8}
+2025-09-09 21:18:08,093 [trainer.py] => NME: {'total': 52.64, '00-09': 51.0, '10-19': 34.1, '20-29': 51.2, '30-39': 41.0, '40-49': 55.0, '50-59': 53.0, '60-69': 83.2, 'old': 47.55, 'new': 83.2}
+2025-09-09 21:18:08,093 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22, 51.53, 47.7]
+2025-09-09 21:18:08,093 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0, 78.78, 77.0]
+2025-09-09 21:18:08,093 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48, 55.43, 52.64]
+2025-09-09 21:18:08,093 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46, 80.78, 78.7]
+
+2025-09-09 21:18:08,094 [trainer.py] => Average Accuracy (CNN): 65.19571428571427
+2025-09-09 21:18:08,094 [trainer.py] => Average Accuracy (NME): 67.42428571428572
+2025-09-09 21:18:08,094 [trainer.py] => All params: 468704
+2025-09-09 21:18:08,095 [trainer.py] => Trainable params: 468704
+2025-09-09 21:18:08,095 [replay.py] => Learning on 70-80
+2025-09-09 21:20:31,558 [replay.py] => Task 7, Epoch 70/70 => Loss 0.162, Train_accy 99.20
+2025-09-09 21:20:31,558 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-09 21:20:42,531 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-09 21:20:48,051 [replay.py] => Exemplar size: 2000
+2025-09-09 21:20:48,051 [trainer.py] => CNN: {'total': 42.7, '00-09': 40.4, '10-19': 26.6, '20-29': 47.8, '30-39': 31.5, '40-49': 39.8, '50-59': 26.5, '60-69': 44.7, '70-79': 84.3, 'old': 36.76, 'new': 84.3}
+2025-09-09 21:20:48,051 [trainer.py] => NME: {'total': 47.85, '00-09': 46.6, '10-19': 30.0, '20-29': 52.0, '30-39': 37.9, '40-49': 46.4, '50-59': 36.3, '60-69': 56.1, '70-79': 77.5, 'old': 43.61, 'new': 77.5}
+2025-09-09 21:20:48,051 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22, 51.53, 47.7, 42.7]
+2025-09-09 21:20:48,051 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0, 78.78, 77.0, 73.68]
+2025-09-09 21:20:48,051 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48, 55.43, 52.64, 47.85]
+2025-09-09 21:20:48,051 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46, 80.78, 78.7, 75.54]
+
+2025-09-09 21:20:48,052 [trainer.py] => Average Accuracy (CNN): 62.38374999999999
+2025-09-09 21:20:48,052 [trainer.py] => Average Accuracy (NME): 64.97749999999999
+2025-09-09 21:20:48,052 [trainer.py] => All params: 469354
+2025-09-09 21:20:48,052 [trainer.py] => Trainable params: 469354
+2025-09-09 21:20:48,053 [replay.py] => Learning on 80-90
+2025-09-09 21:23:11,825 [replay.py] => Task 8, Epoch 70/70 => Loss 0.161, Train_accy 99.40
+2025-09-09 21:23:11,825 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-09 21:23:24,129 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-09 21:23:29,293 [replay.py] => Exemplar size: 1980
+2025-09-09 21:23:29,293 [trainer.py] => CNN: {'total': 38.83, '00-09': 39.2, '10-19': 21.8, '20-29': 37.2, '30-39': 29.0, '40-49': 36.0, '50-59': 28.1, '60-69': 35.1, '70-79': 34.5, '80-89': 88.6, 'old': 32.61, 'new': 88.6}
+2025-09-09 21:23:29,294 [trainer.py] => NME: {'total': 44.73, '00-09': 43.9, '10-19': 27.5, '20-29': 44.4, '30-39': 34.5, '40-49': 45.2, '50-59': 35.7, '60-69': 44.9, '70-79': 45.5, '80-89': 81.0, 'old': 40.2, 'new': 81.0}
+2025-09-09 21:23:29,294 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22, 51.53, 47.7, 42.7, 38.83]
+2025-09-09 21:23:29,294 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0, 78.78, 77.0, 73.68, 71.6]
+2025-09-09 21:23:29,294 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48, 55.43, 52.64, 47.85, 44.73]
+2025-09-09 21:23:29,294 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46, 80.78, 78.7, 75.54, 73.7]
+
+2025-09-09 21:23:29,294 [trainer.py] => Average Accuracy (CNN): 59.766666666666666
+2025-09-09 21:23:29,294 [trainer.py] => Average Accuracy (NME): 62.727777777777774
+2025-09-09 21:23:29,295 [trainer.py] => All params: 470004
+2025-09-09 21:23:29,295 [trainer.py] => Trainable params: 470004
+2025-09-09 21:23:29,296 [replay.py] => Learning on 90-100
+2025-09-09 21:25:53,940 [replay.py] => Task 9, Epoch 70/70 => Loss 0.183, Train_accy 99.30
+2025-09-09 21:25:53,940 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-09 21:26:07,755 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-09 21:26:13,462 [replay.py] => Exemplar size: 2000
+2025-09-09 21:26:13,462 [trainer.py] => CNN: {'total': 37.99, '00-09': 34.6, '10-19': 22.1, '20-29': 35.1, '30-39': 28.8, '40-49': 37.6, '50-59': 27.5, '60-69': 37.9, '70-79': 33.3, '80-89': 38.9, '90-99': 84.1, 'old': 32.87, 'new': 84.1}
+2025-09-09 21:26:13,462 [trainer.py] => NME: {'total': 43.42, '00-09': 40.6, '10-19': 27.4, '20-29': 42.2, '30-39': 33.3, '40-49': 42.8, '50-59': 33.0, '60-69': 44.2, '70-79': 41.7, '80-89': 50.5, '90-99': 78.5, 'old': 39.52, 'new': 78.5}
+2025-09-09 21:26:13,462 [trainer.py] => CNN top1 curve: [90.2, 76.8, 70.4, 62.52, 57.22, 51.53, 47.7, 42.7, 38.83, 37.99]
+2025-09-09 21:26:13,462 [trainer.py] => CNN top5 curve: [98.9, 95.25, 90.63, 86.98, 84.0, 78.78, 77.0, 73.68, 71.6, 69.0]
+2025-09-09 21:26:13,462 [trainer.py] => NME top1 curve: [90.3, 76.8, 71.5, 64.82, 60.48, 55.43, 52.64, 47.85, 44.73, 43.42]
+2025-09-09 21:26:13,462 [trainer.py] => NME top5 curve: [98.8, 95.45, 91.47, 87.88, 85.46, 80.78, 78.7, 75.54, 73.7, 71.15]
+
+2025-09-09 21:26:13,462 [trainer.py] => Average Accuracy (CNN): 57.589
+2025-09-09 21:26:13,462 [trainer.py] => Average Accuracy (NME): 60.79699999999999
+2025-09-09 21:26:13,463 [trainer.py] => Forgetting (CNN): 53.144444444444446
+2025-09-09 21:26:13,464 [trainer.py] => Forgetting (NME): 42.81111111111111
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 1.0)
+--------------------------------------------------------
+2025-09-10 00:35:20,324 [trainer.py] => config: ./exps/replay.json
+2025-09-10 00:35:20,324 [trainer.py] => prefix: reproduce
+2025-09-10 00:35:20,324 [trainer.py] => dataset: cifar100
+2025-09-10 00:35:20,324 [trainer.py] => memory_size: 2000
+2025-09-10 00:35:20,324 [trainer.py] => memory_per_class: 20
+2025-09-10 00:35:20,324 [trainer.py] => fixed_memory: False
+2025-09-10 00:35:20,324 [trainer.py] => shuffle: True
+2025-09-10 00:35:20,324 [trainer.py] => init_cls: 10
+2025-09-10 00:35:20,324 [trainer.py] => increment: 10
+2025-09-10 00:35:20,324 [trainer.py] => model_name: replay
+2025-09-10 00:35:20,324 [trainer.py] => convnet_type: resnet32
+2025-09-10 00:35:20,324 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-10 00:35:20,324 [trainer.py] => seed: 1993
+2025-09-10 00:35:21,582 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-10 00:35:22,021 [trainer.py] => All params: 464154
+2025-09-10 00:35:22,021 [trainer.py] => Trainable params: 464154
+2025-09-10 00:35:22,021 [replay.py] => Learning on 0-10
+2025-09-10 00:40:01,768 [replay.py] => Task 0, Epoch 200/200 => Loss 0.108, Train_accy 98.72
+2025-09-10 00:40:01,768 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-10 00:40:01,768 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-10 00:40:06,084 [replay.py] => Exemplar size: 2000
+2025-09-10 00:40:06,084 [trainer.py] => CNN: {'total': 89.9, '00-09': 89.9, 'old': 0, 'new': 89.9}
+2025-09-10 00:40:06,085 [trainer.py] => NME: {'total': 90.0, '00-09': 90.0, 'old': 0, 'new': 90.0}
+2025-09-10 00:40:06,085 [trainer.py] => CNN top1 curve: [89.9]
+2025-09-10 00:40:06,085 [trainer.py] => CNN top5 curve: [99.0]
+2025-09-10 00:40:06,085 [trainer.py] => NME top1 curve: [90.0]
+2025-09-10 00:40:06,085 [trainer.py] => NME top5 curve: [99.4]
+
+2025-09-10 00:40:06,085 [trainer.py] => Average Accuracy (CNN): 89.9
+2025-09-10 00:40:06,085 [trainer.py] => Average Accuracy (NME): 90.0
+2025-09-10 00:40:06,085 [trainer.py] => All params: 464804
+2025-09-10 00:40:06,085 [trainer.py] => Trainable params: 464804
+2025-09-10 00:40:06,086 [replay.py] => Learning on 10-20
+2025-09-10 00:42:19,050 [replay.py] => Task 1, Epoch 70/70 => Loss 0.200, Train_accy 96.16
+2025-09-10 00:42:19,051 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-10 00:42:20,292 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-10 00:42:24,447 [replay.py] => Exemplar size: 2000
+2025-09-10 00:42:24,447 [trainer.py] => CNN: {'total': 76.35, '00-09': 75.9, '10-19': 76.8, 'old': 75.9, 'new': 76.8}
+2025-09-10 00:42:24,447 [trainer.py] => NME: {'total': 76.7, '00-09': 77.3, '10-19': 76.1, 'old': 77.3, 'new': 76.1}
+2025-09-10 00:42:24,447 [trainer.py] => CNN top1 curve: [89.9, 76.35]
+2025-09-10 00:42:24,447 [trainer.py] => CNN top5 curve: [99.0, 93.45]
+2025-09-10 00:42:24,447 [trainer.py] => NME top1 curve: [90.0, 76.7]
+2025-09-10 00:42:24,447 [trainer.py] => NME top5 curve: [99.4, 94.35]
+
+2025-09-10 00:42:24,448 [trainer.py] => Average Accuracy (CNN): 83.125
+2025-09-10 00:42:24,448 [trainer.py] => Average Accuracy (NME): 83.35
+2025-09-10 00:42:24,448 [trainer.py] => All params: 465454
+2025-09-10 00:42:24,448 [trainer.py] => Trainable params: 465454
+2025-09-10 00:42:24,449 [replay.py] => Learning on 20-30
+2025-09-10 00:44:38,107 [replay.py] => Task 2, Epoch 70/70 => Loss 0.109, Train_accy 98.64
+2025-09-10 00:44:38,107 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-10 00:44:40,798 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-10 00:44:44,904 [replay.py] => Exemplar size: 1980
+2025-09-10 00:44:44,904 [trainer.py] => CNN: {'total': 70.83, '00-09': 70.8, '10-19': 54.4, '20-29': 87.3, 'old': 62.6, 'new': 87.3}
+2025-09-10 00:44:44,904 [trainer.py] => NME: {'total': 71.83, '00-09': 72.7, '10-19': 57.6, '20-29': 85.2, 'old': 65.15, 'new': 85.2}
+2025-09-10 00:44:44,904 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83]
+2025-09-10 00:44:44,904 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87]
+2025-09-10 00:44:44,904 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83]
+2025-09-10 00:44:44,904 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8]
+
+2025-09-10 00:44:44,904 [trainer.py] => Average Accuracy (CNN): 79.02666666666666
+2025-09-10 00:44:44,904 [trainer.py] => Average Accuracy (NME): 79.50999999999999
+2025-09-10 00:44:44,905 [trainer.py] => All params: 466104
+2025-09-10 00:44:44,905 [trainer.py] => Trainable params: 466104
+2025-09-10 00:44:44,905 [replay.py] => Learning on 30-40
+2025-09-10 00:47:00,860 [replay.py] => Task 3, Epoch 70/70 => Loss 0.120, Train_accy 98.93
+2025-09-10 00:47:00,861 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-10 00:47:04,619 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-10 00:47:08,883 [replay.py] => Exemplar size: 2000
+2025-09-10 00:47:08,884 [trainer.py] => CNN: {'total': 63.0, '00-09': 60.7, '10-19': 45.7, '20-29': 62.2, '30-39': 83.4, 'old': 56.2, 'new': 83.4}
+2025-09-10 00:47:08,884 [trainer.py] => NME: {'total': 65.0, '00-09': 64.0, '10-19': 49.2, '20-29': 64.9, '30-39': 81.9, 'old': 59.37, 'new': 81.9}
+2025-09-10 00:47:08,884 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0]
+2025-09-10 00:47:08,884 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5]
+2025-09-10 00:47:08,884 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0]
+2025-09-10 00:47:08,884 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15]
+
+2025-09-10 00:47:08,884 [trainer.py] => Average Accuracy (CNN): 75.02
+2025-09-10 00:47:08,884 [trainer.py] => Average Accuracy (NME): 75.8825
+2025-09-10 00:47:08,885 [trainer.py] => All params: 466754
+2025-09-10 00:47:08,886 [trainer.py] => Trainable params: 466754
+2025-09-10 00:47:08,887 [replay.py] => Learning on 40-50
+2025-09-10 00:49:25,453 [replay.py] => Task 4, Epoch 70/70 => Loss 0.103, Train_accy 99.20
+2025-09-10 00:49:25,454 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-10 00:49:30,650 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-10 00:49:34,931 [replay.py] => Exemplar size: 2000
+2025-09-10 00:49:34,931 [trainer.py] => CNN: {'total': 57.28, '00-09': 54.6, '10-19': 38.0, '20-29': 54.5, '30-39': 50.7, '40-49': 88.6, 'old': 49.45, 'new': 88.6}
+2025-09-10 00:49:34,931 [trainer.py] => NME: {'total': 59.52, '00-09': 58.8, '10-19': 40.8, '20-29': 57.9, '30-39': 53.8, '40-49': 86.3, 'old': 52.82, 'new': 86.3}
+2025-09-10 00:49:34,931 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28]
+2025-09-10 00:49:34,931 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2]
+2025-09-10 00:49:34,931 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52]
+2025-09-10 00:49:34,931 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04]
+
+2025-09-10 00:49:34,931 [trainer.py] => Average Accuracy (CNN): 71.47200000000001
+2025-09-10 00:49:34,931 [trainer.py] => Average Accuracy (NME): 72.60999999999999
+2025-09-10 00:49:34,931 [trainer.py] => All params: 467404
+2025-09-10 00:49:34,931 [trainer.py] => Trainable params: 467404
+2025-09-10 00:49:34,932 [replay.py] => Learning on 50-60
+2025-09-10 00:51:53,358 [replay.py] => Task 5, Epoch 70/70 => Loss 0.146, Train_accy 98.73
+2025-09-10 00:51:53,359 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-10 00:51:59,740 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-10 00:52:04,094 [replay.py] => Exemplar size: 1980
+2025-09-10 00:52:04,094 [trainer.py] => CNN: {'total': 50.82, '00-09': 46.3, '10-19': 36.4, '20-29': 46.9, '30-39': 40.9, '40-49': 49.8, '50-59': 84.6, 'old': 44.06, 'new': 84.6}
+2025-09-10 00:52:04,094 [trainer.py] => NME: {'total': 54.52, '00-09': 52.8, '10-19': 37.9, '20-29': 51.5, '30-39': 44.4, '40-49': 59.5, '50-59': 81.0, 'old': 49.22, 'new': 81.0}
+2025-09-10 00:52:04,094 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28, 50.82]
+2025-09-10 00:52:04,094 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2, 80.65]
+2025-09-10 00:52:04,094 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52, 54.52]
+2025-09-10 00:52:04,094 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04, 80.42]
+
+2025-09-10 00:52:04,094 [trainer.py] => Average Accuracy (CNN): 68.03
+2025-09-10 00:52:04,094 [trainer.py] => Average Accuracy (NME): 69.59499999999998
+2025-09-10 00:52:04,095 [trainer.py] => All params: 468054
+2025-09-10 00:52:04,095 [trainer.py] => Trainable params: 468054
+2025-09-10 00:52:04,096 [replay.py] => Learning on 60-70
+2025-09-10 00:54:21,557 [replay.py] => Task 6, Epoch 70/70 => Loss 0.150, Train_accy 99.17
+2025-09-10 00:54:21,557 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-10 00:54:29,207 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-10 00:54:33,800 [replay.py] => Exemplar size: 1960
+2025-09-10 00:54:33,801 [trainer.py] => CNN: {'total': 47.71, '00-09': 46.7, '10-19': 27.1, '20-29': 49.0, '30-39': 33.8, '40-49': 48.4, '50-59': 38.9, '60-69': 90.1, 'old': 40.65, 'new': 90.1}
+2025-09-10 00:54:33,801 [trainer.py] => NME: {'total': 51.23, '00-09': 49.9, '10-19': 31.3, '20-29': 51.2, '30-39': 38.8, '40-49': 54.2, '50-59': 47.3, '60-69': 85.9, 'old': 45.45, 'new': 85.9}
+2025-09-10 00:54:33,801 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28, 50.82, 47.71]
+2025-09-10 00:54:33,801 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2, 80.65, 76.84]
+2025-09-10 00:54:33,801 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52, 54.52, 51.23]
+2025-09-10 00:54:33,801 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04, 80.42, 78.01]
+
+2025-09-10 00:54:33,801 [trainer.py] => Average Accuracy (CNN): 65.12714285714286
+2025-09-10 00:54:33,801 [trainer.py] => Average Accuracy (NME): 66.97142857142856
+2025-09-10 00:54:33,801 [trainer.py] => All params: 468704
+2025-09-10 00:54:33,801 [trainer.py] => Trainable params: 468704
+2025-09-10 00:54:33,802 [replay.py] => Learning on 70-80
+2025-09-10 00:56:52,397 [replay.py] => Task 7, Epoch 70/70 => Loss 0.202, Train_accy 98.32
+2025-09-10 00:56:52,398 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-10 00:57:01,199 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-10 00:57:05,852 [replay.py] => Exemplar size: 2000
+2025-09-10 00:57:05,852 [trainer.py] => CNN: {'total': 40.52, '00-09': 38.6, '10-19': 24.3, '20-29': 42.8, '30-39': 27.9, '40-49': 37.3, '50-59': 25.4, '60-69': 42.2, '70-79': 85.7, 'old': 34.07, 'new': 85.7}
+2025-09-10 00:57:05,852 [trainer.py] => NME: {'total': 45.51, '00-09': 46.3, '10-19': 27.1, '20-29': 46.3, '30-39': 33.7, '40-49': 44.9, '50-59': 35.8, '60-69': 50.7, '70-79': 79.3, 'old': 40.69, 'new': 79.3}
+2025-09-10 00:57:05,852 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28, 50.82, 47.71, 40.52]
+2025-09-10 00:57:05,852 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2, 80.65, 76.84, 72.47]
+2025-09-10 00:57:05,852 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52, 54.52, 51.23, 45.51]
+2025-09-10 00:57:05,852 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04, 80.42, 78.01, 73.59]
+
+2025-09-10 00:57:05,852 [trainer.py] => Average Accuracy (CNN): 62.051249999999996
+2025-09-10 00:57:05,852 [trainer.py] => Average Accuracy (NME): 64.28875
+2025-09-10 00:57:05,853 [trainer.py] => All params: 469354
+2025-09-10 00:57:05,853 [trainer.py] => Trainable params: 469354
+2025-09-10 00:57:05,854 [replay.py] => Learning on 80-90
+2025-09-10 00:59:26,250 [replay.py] => Task 8, Epoch 70/70 => Loss 0.195, Train_accy 99.10
+2025-09-10 00:59:26,251 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-10 00:59:36,324 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-10 00:59:40,924 [replay.py] => Exemplar size: 1980
+2025-09-10 00:59:40,924 [trainer.py] => CNN: {'total': 39.5, '00-09': 40.3, '10-19': 19.9, '20-29': 38.6, '30-39': 27.4, '40-49': 35.0, '50-59': 31.9, '60-69': 34.9, '70-79': 38.4, '80-89': 89.1, 'old': 33.3, 'new': 89.1}
+2025-09-10 00:59:40,924 [trainer.py] => NME: {'total': 44.77, '00-09': 45.8, '10-19': 23.7, '20-29': 44.0, '30-39': 33.2, '40-49': 39.9, '50-59': 38.0, '60-69': 44.9, '70-79': 50.2, '80-89': 83.2, 'old': 39.96, 'new': 83.2}
+2025-09-10 00:59:40,924 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28, 50.82, 47.71, 40.52, 39.5]
+2025-09-10 00:59:40,924 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2, 80.65, 76.84, 72.47, 70.68]
+2025-09-10 00:59:40,924 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52, 54.52, 51.23, 45.51, 44.77]
+2025-09-10 00:59:40,924 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04, 80.42, 78.01, 73.59, 72.01]
+
+2025-09-10 00:59:40,924 [trainer.py] => Average Accuracy (CNN): 59.54555555555555
+2025-09-10 00:59:40,924 [trainer.py] => Average Accuracy (NME): 62.11999999999999
+2025-09-10 00:59:40,924 [trainer.py] => All params: 470004
+2025-09-10 00:59:40,925 [trainer.py] => Trainable params: 470004
+2025-09-10 00:59:40,925 [replay.py] => Learning on 90-100
+2025-09-10 01:02:00,964 [replay.py] => Task 9, Epoch 70/70 => Loss 0.228, Train_accy 98.71
+2025-09-10 01:02:00,964 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-10 01:02:12,069 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-10 01:02:16,904 [replay.py] => Exemplar size: 2000
+2025-09-10 01:02:16,904 [trainer.py] => CNN: {'total': 36.01, '00-09': 30.9, '10-19': 21.3, '20-29': 33.2, '30-39': 28.5, '40-49': 34.6, '50-59': 27.2, '60-69': 35.6, '70-79': 28.7, '80-89': 37.4, '90-99': 82.7, 'old': 30.82, 'new': 82.7}
+2025-09-10 01:02:16,904 [trainer.py] => NME: {'total': 41.59, '00-09': 38.2, '10-19': 24.3, '20-29': 42.0, '30-39': 32.2, '40-49': 41.0, '50-59': 32.9, '60-69': 43.4, '70-79': 37.3, '80-89': 46.0, '90-99': 78.6, 'old': 37.48, 'new': 78.6}
+2025-09-10 01:02:16,904 [trainer.py] => CNN top1 curve: [89.9, 76.35, 70.83, 63.0, 57.28, 50.82, 47.71, 40.52, 39.5, 36.01]
+2025-09-10 01:02:16,904 [trainer.py] => CNN top5 curve: [99.0, 93.45, 89.87, 86.5, 83.2, 80.65, 76.84, 72.47, 70.68, 67.56]
+2025-09-10 01:02:16,904 [trainer.py] => NME top1 curve: [90.0, 76.7, 71.83, 65.0, 59.52, 54.52, 51.23, 45.51, 44.77, 41.59]
+2025-09-10 01:02:16,904 [trainer.py] => NME top5 curve: [99.4, 94.35, 90.8, 88.15, 84.04, 80.42, 78.01, 73.59, 72.01, 69.48]
+
+2025-09-10 01:02:16,904 [trainer.py] => Average Accuracy (CNN): 57.19199999999999
+2025-09-10 01:02:16,904 [trainer.py] => Average Accuracy (NME): 60.06699999999999
+2025-09-10 01:02:16,905 [trainer.py] => Forgetting (CNN): 55.34444444444444
+2025-09-10 01:02:16,905 [trainer.py] => Forgetting (NME): 45.73333333333333
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.02)
+--------------------------------------------------------
+2025-09-10 09:08:56,150 [trainer.py] => config: ./exps/replay.json
+2025-09-10 09:08:56,150 [trainer.py] => prefix: reproduce
+2025-09-10 09:08:56,150 [trainer.py] => dataset: cifar100
+2025-09-10 09:08:56,150 [trainer.py] => memory_size: 2000
+2025-09-10 09:08:56,150 [trainer.py] => memory_per_class: 20
+2025-09-10 09:08:56,150 [trainer.py] => fixed_memory: False
+2025-09-10 09:08:56,150 [trainer.py] => shuffle: True
+2025-09-10 09:08:56,150 [trainer.py] => init_cls: 10
+2025-09-10 09:08:56,150 [trainer.py] => increment: 10
+2025-09-10 09:08:56,150 [trainer.py] => model_name: replay
+2025-09-10 09:08:56,150 [trainer.py] => convnet_type: resnet32
+2025-09-10 09:08:56,150 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-10 09:08:56,151 [trainer.py] => seed: 1993
+2025-09-10 09:08:57,391 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-10 09:08:57,821 [trainer.py] => All params: 464154
+2025-09-10 09:08:57,821 [trainer.py] => Trainable params: 464154
+2025-09-10 09:08:57,821 [replay.py] => Learning on 0-10
+2025-09-10 09:13:55,901 [replay.py] => Task 0, Epoch 200/200 => Loss 0.065, Train_accy 99.50
+2025-09-10 09:13:55,901 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-10 09:13:55,901 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-10 09:14:01,811 [replay.py] => Exemplar size: 2000
+2025-09-10 09:14:01,811 [trainer.py] => CNN: {'total': 90.7, '00-09': 90.7, 'old': 0, 'new': 90.7}
+2025-09-10 09:14:01,811 [trainer.py] => NME: {'total': 90.3, '00-09': 90.3, 'old': 0, 'new': 90.3}
+2025-09-10 09:14:01,811 [trainer.py] => CNN top1 curve: [90.7]
+2025-09-10 09:14:01,811 [trainer.py] => CNN top5 curve: [99.3]
+2025-09-10 09:14:01,811 [trainer.py] => NME top1 curve: [90.3]
+2025-09-10 09:14:01,811 [trainer.py] => NME top5 curve: [99.2]
+
+2025-09-10 09:14:01,812 [trainer.py] => Average Accuracy (CNN): 90.7
+2025-09-10 09:14:01,812 [trainer.py] => Average Accuracy (NME): 90.3
+2025-09-10 09:14:01,812 [trainer.py] => All params: 464804
+2025-09-10 09:14:01,812 [trainer.py] => Trainable params: 464804
+2025-09-10 09:14:01,813 [replay.py] => Learning on 10-20
+2025-09-10 09:16:17,305 [replay.py] => Task 1, Epoch 70/70 => Loss 0.077, Train_accy 98.94
+2025-09-10 09:16:17,306 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-10 09:16:19,358 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-10 09:16:25,247 [replay.py] => Exemplar size: 2000
+2025-09-10 09:16:25,247 [trainer.py] => CNN: {'total': 77.15, '00-09': 75.4, '10-19': 78.9, 'old': 75.4, 'new': 78.9}
+2025-09-10 09:16:25,247 [trainer.py] => NME: {'total': 76.95, '00-09': 78.3, '10-19': 75.6, 'old': 78.3, 'new': 75.6}
+2025-09-10 09:16:25,247 [trainer.py] => CNN top1 curve: [90.7, 77.15]
+2025-09-10 09:16:25,247 [trainer.py] => CNN top5 curve: [99.3, 95.5]
+2025-09-10 09:16:25,247 [trainer.py] => NME top1 curve: [90.3, 76.95]
+2025-09-10 09:16:25,247 [trainer.py] => NME top5 curve: [99.2, 95.6]
+
+2025-09-10 09:16:25,247 [trainer.py] => Average Accuracy (CNN): 83.92500000000001
+2025-09-10 09:16:25,247 [trainer.py] => Average Accuracy (NME): 83.625
+2025-09-10 09:16:25,248 [trainer.py] => All params: 465454
+2025-09-10 09:16:25,248 [trainer.py] => Trainable params: 465454
+2025-09-10 09:16:25,248 [replay.py] => Learning on 20-30
+2025-09-10 09:18:42,977 [replay.py] => Task 2, Epoch 70/70 => Loss 0.051, Train_accy 99.71
+2025-09-10 09:18:42,978 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-10 09:18:47,202 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-10 09:18:52,955 [replay.py] => Exemplar size: 1980
+2025-09-10 09:18:52,955 [trainer.py] => CNN: {'total': 70.3, '00-09': 68.6, '10-19': 54.1, '20-29': 88.2, 'old': 61.35, 'new': 88.2}
+2025-09-10 09:18:52,955 [trainer.py] => NME: {'total': 72.33, '00-09': 72.6, '10-19': 60.8, '20-29': 83.6, 'old': 66.7, 'new': 83.6}
+2025-09-10 09:18:52,955 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3]
+2025-09-10 09:18:52,955 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6]
+2025-09-10 09:18:52,955 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33]
+2025-09-10 09:18:52,955 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5]
+
+2025-09-10 09:18:52,955 [trainer.py] => Average Accuracy (CNN): 79.38333333333334
+2025-09-10 09:18:52,955 [trainer.py] => Average Accuracy (NME): 79.86
+2025-09-10 09:18:52,956 [trainer.py] => All params: 466104
+2025-09-10 09:18:52,956 [trainer.py] => Trainable params: 466104
+2025-09-10 09:18:52,957 [replay.py] => Learning on 30-40
+2025-09-10 09:21:09,880 [replay.py] => Task 3, Epoch 70/70 => Loss 0.058, Train_accy 99.71
+2025-09-10 09:21:09,881 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-10 09:21:15,856 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-10 09:21:21,798 [replay.py] => Exemplar size: 2000
+2025-09-10 09:21:21,798 [trainer.py] => CNN: {'total': 61.88, '00-09': 59.9, '10-19': 44.6, '20-29': 58.4, '30-39': 84.6, 'old': 54.3, 'new': 84.6}
+2025-09-10 09:21:21,798 [trainer.py] => NME: {'total': 66.85, '00-09': 65.8, '10-19': 55.2, '20-29': 67.8, '30-39': 78.6, 'old': 62.93, 'new': 78.6}
+2025-09-10 09:21:21,798 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88]
+2025-09-10 09:21:21,798 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88]
+2025-09-10 09:21:21,798 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85]
+2025-09-10 09:21:21,798 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18]
+
+2025-09-10 09:21:21,799 [trainer.py] => Average Accuracy (CNN): 75.00750000000001
+2025-09-10 09:21:21,799 [trainer.py] => Average Accuracy (NME): 76.60749999999999
+2025-09-10 09:21:21,799 [trainer.py] => All params: 466754
+2025-09-10 09:21:21,799 [trainer.py] => Trainable params: 466754
+2025-09-10 09:21:21,800 [replay.py] => Learning on 40-50
+2025-09-10 09:23:39,770 [replay.py] => Task 4, Epoch 70/70 => Loss 0.050, Train_accy 99.77
+2025-09-10 09:23:39,770 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-10 09:23:47,919 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-10 09:23:53,975 [replay.py] => Exemplar size: 2000
+2025-09-10 09:23:53,975 [trainer.py] => CNN: {'total': 56.62, '00-09': 53.6, '10-19': 36.5, '20-29': 54.1, '30-39': 49.9, '40-49': 89.0, 'old': 48.52, 'new': 89.0}
+2025-09-10 09:23:53,975 [trainer.py] => NME: {'total': 62.28, '00-09': 63.2, '10-19': 45.1, '20-29': 63.0, '30-39': 58.5, '40-49': 81.6, 'old': 57.45, 'new': 81.6}
+2025-09-10 09:23:53,976 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62]
+2025-09-10 09:23:53,976 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18]
+2025-09-10 09:23:53,976 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28]
+2025-09-10 09:23:53,976 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34]
+
+2025-09-10 09:23:53,976 [trainer.py] => Average Accuracy (CNN): 71.33000000000001
+2025-09-10 09:23:53,976 [trainer.py] => Average Accuracy (NME): 73.74199999999999
+2025-09-10 09:23:53,976 [trainer.py] => All params: 467404
+2025-09-10 09:23:53,976 [trainer.py] => Trainable params: 467404
+2025-09-10 09:23:53,977 [replay.py] => Learning on 50-60
+2025-09-10 09:26:12,744 [replay.py] => Task 5, Epoch 70/70 => Loss 0.057, Train_accy 99.76
+2025-09-10 09:26:12,745 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-10 09:26:22,901 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-10 09:26:29,015 [replay.py] => Exemplar size: 1980
+2025-09-10 09:26:29,015 [trainer.py] => CNN: {'total': 52.98, '00-09': 46.4, '10-19': 35.9, '20-29': 50.8, '30-39': 46.0, '40-49': 53.8, '50-59': 85.0, 'old': 46.58, 'new': 85.0}
+2025-09-10 09:26:29,015 [trainer.py] => NME: {'total': 58.37, '00-09': 56.9, '10-19': 42.9, '20-29': 58.6, '30-39': 53.2, '40-49': 63.1, '50-59': 75.5, 'old': 54.94, 'new': 75.5}
+2025-09-10 09:26:29,015 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62, 52.98]
+2025-09-10 09:26:29,015 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18, 82.03]
+2025-09-10 09:26:29,015 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28, 58.37]
+2025-09-10 09:26:29,015 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34, 84.38]
+
+2025-09-10 09:26:29,015 [trainer.py] => Average Accuracy (CNN): 68.27166666666668
+2025-09-10 09:26:29,015 [trainer.py] => Average Accuracy (NME): 71.17999999999999
+2025-09-10 09:26:29,016 [trainer.py] => All params: 468054
+2025-09-10 09:26:29,016 [trainer.py] => Trainable params: 468054
+2025-09-10 09:26:29,016 [replay.py] => Learning on 60-70
+2025-09-10 09:28:48,731 [replay.py] => Task 6, Epoch 70/70 => Loss 0.052, Train_accy 99.79
+2025-09-10 09:28:48,731 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-10 09:29:00,831 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-10 09:29:06,974 [replay.py] => Exemplar size: 1960
+2025-09-10 09:29:06,974 [trainer.py] => CNN: {'total': 50.04, '00-09': 48.9, '10-19': 29.9, '20-29': 49.7, '30-39': 36.7, '40-49': 52.2, '50-59': 42.8, '60-69': 90.1, 'old': 43.37, 'new': 90.1}
+2025-09-10 09:29:06,974 [trainer.py] => NME: {'total': 55.21, '00-09': 53.9, '10-19': 39.0, '20-29': 56.3, '30-39': 44.9, '40-49': 60.0, '50-59': 51.8, '60-69': 80.6, 'old': 50.98, 'new': 80.6}
+2025-09-10 09:29:06,974 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62, 52.98, 50.04]
+2025-09-10 09:29:06,974 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18, 82.03, 79.33]
+2025-09-10 09:29:06,974 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28, 58.37, 55.21]
+2025-09-10 09:29:06,974 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34, 84.38, 82.07]
+
+2025-09-10 09:29:06,974 [trainer.py] => Average Accuracy (CNN): 65.66714285714286
+2025-09-10 09:29:06,974 [trainer.py] => Average Accuracy (NME): 68.89857142857142
+2025-09-10 09:29:06,975 [trainer.py] => All params: 468704
+2025-09-10 09:29:06,975 [trainer.py] => Trainable params: 468704
+2025-09-10 09:29:06,976 [replay.py] => Learning on 70-80
+2025-09-10 09:31:27,814 [replay.py] => Task 7, Epoch 70/70 => Loss 0.062, Train_accy 99.66
+2025-09-10 09:31:27,815 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-10 09:31:41,965 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-10 09:31:48,157 [replay.py] => Exemplar size: 2000
+2025-09-10 09:31:48,157 [trainer.py] => CNN: {'total': 43.22, '00-09': 40.7, '10-19': 30.6, '20-29': 45.2, '30-39': 33.3, '40-49': 38.1, '50-59': 29.0, '60-69': 44.2, '70-79': 84.7, 'old': 37.3, 'new': 84.7}
+2025-09-10 09:31:48,157 [trainer.py] => NME: {'total': 49.8, '00-09': 48.8, '10-19': 37.9, '20-29': 52.2, '30-39': 41.6, '40-49': 48.9, '50-59': 40.6, '60-69': 54.9, '70-79': 73.5, 'old': 46.41, 'new': 73.5}
+2025-09-10 09:31:48,158 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62, 52.98, 50.04, 43.22]
+2025-09-10 09:31:48,158 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18, 82.03, 79.33, 76.51]
+2025-09-10 09:31:48,158 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28, 58.37, 55.21, 49.8]
+2025-09-10 09:31:48,158 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34, 84.38, 82.07, 79.26]
+
+2025-09-10 09:31:48,158 [trainer.py] => Average Accuracy (CNN): 62.86125000000001
+2025-09-10 09:31:48,158 [trainer.py] => Average Accuracy (NME): 66.51124999999999
+2025-09-10 09:31:48,158 [trainer.py] => All params: 469354
+2025-09-10 09:31:48,158 [trainer.py] => Trainable params: 469354
+2025-09-10 09:31:48,159 [replay.py] => Learning on 80-90
+2025-09-10 09:34:09,259 [replay.py] => Task 8, Epoch 70/70 => Loss 0.054, Train_accy 99.90
+2025-09-10 09:34:09,259 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-10 09:34:25,602 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-10 09:34:31,962 [replay.py] => Exemplar size: 1980
+2025-09-10 09:34:31,962 [trainer.py] => CNN: {'total': 40.51, '00-09': 38.7, '10-19': 24.7, '20-29': 37.9, '30-39': 29.1, '40-49': 37.1, '50-59': 30.7, '60-69': 37.4, '70-79': 40.6, '80-89': 88.4, 'old': 34.52, 'new': 88.4}
+2025-09-10 09:34:31,963 [trainer.py] => NME: {'total': 47.32, '00-09': 46.2, '10-19': 33.5, '20-29': 48.1, '30-39': 37.1, '40-49': 45.0, '50-59': 40.2, '60-69': 48.3, '70-79': 49.7, '80-89': 77.8, 'old': 43.51, 'new': 77.8}
+2025-09-10 09:34:31,963 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62, 52.98, 50.04, 43.22, 40.51]
+2025-09-10 09:34:31,963 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18, 82.03, 79.33, 76.51, 73.9]
+2025-09-10 09:34:31,963 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28, 58.37, 55.21, 49.8, 47.32]
+2025-09-10 09:34:31,963 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34, 84.38, 82.07, 79.26, 76.42]
+
+2025-09-10 09:34:31,963 [trainer.py] => Average Accuracy (CNN): 60.37777777777779
+2025-09-10 09:34:31,963 [trainer.py] => Average Accuracy (NME): 64.37888888888888
+2025-09-10 09:34:31,963 [trainer.py] => All params: 470004
+2025-09-10 09:34:31,963 [trainer.py] => Trainable params: 470004
+2025-09-10 09:34:31,964 [replay.py] => Learning on 90-100
+2025-09-10 09:36:53,907 [replay.py] => Task 9, Epoch 70/70 => Loss 0.062, Train_accy 99.83
+2025-09-10 09:36:53,907 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-10 09:37:12,201 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-10 09:37:18,715 [replay.py] => Exemplar size: 2000
+2025-09-10 09:37:18,715 [trainer.py] => CNN: {'total': 39.58, '00-09': 32.8, '10-19': 26.7, '20-29': 39.1, '30-39': 29.1, '40-49': 38.6, '50-59': 27.7, '60-69': 38.6, '70-79': 35.0, '80-89': 44.4, '90-99': 83.8, 'old': 34.67, 'new': 83.8}
+2025-09-10 09:37:18,715 [trainer.py] => NME: {'total': 46.04, '00-09': 43.7, '10-19': 32.5, '20-29': 47.5, '30-39': 35.6, '40-49': 50.6, '50-59': 36.1, '60-69': 46.7, '70-79': 44.1, '80-89': 50.9, '90-99': 72.7, 'old': 43.08, 'new': 72.7}
+2025-09-10 09:37:18,715 [trainer.py] => CNN top1 curve: [90.7, 77.15, 70.3, 61.88, 56.62, 52.98, 50.04, 43.22, 40.51, 39.58]
+2025-09-10 09:37:18,715 [trainer.py] => CNN top5 curve: [99.3, 95.5, 92.6, 88.88, 85.18, 82.03, 79.33, 76.51, 73.9, 71.72]
+2025-09-10 09:37:18,715 [trainer.py] => NME top1 curve: [90.3, 76.95, 72.33, 66.85, 62.28, 58.37, 55.21, 49.8, 47.32, 46.04]
+2025-09-10 09:37:18,715 [trainer.py] => NME top5 curve: [99.2, 95.6, 93.5, 90.18, 87.34, 84.38, 82.07, 79.26, 76.42, 75.06]
+
+2025-09-10 09:37:18,715 [trainer.py] => Average Accuracy (CNN): 58.298000000000016
+2025-09-10 09:37:18,715 [trainer.py] => Average Accuracy (NME): 62.544999999999995
+2025-09-10 09:37:18,716 [trainer.py] => Forgetting (CNN): 51.95555555555555
+2025-09-10 09:37:18,716 [trainer.py] => Forgetting (NME): 36.599999999999994
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.01)
+--------------------------------------------------------
+
+2025-09-10 18:02:37,675 [trainer.py] => config: ./exps/replay.json
+2025-09-10 18:02:37,675 [trainer.py] => prefix: reproduce
+2025-09-10 18:02:37,675 [trainer.py] => dataset: cifar100
+2025-09-10 18:02:37,675 [trainer.py] => memory_size: 2000
+2025-09-10 18:02:37,675 [trainer.py] => memory_per_class: 20
+2025-09-10 18:02:37,675 [trainer.py] => fixed_memory: False
+2025-09-10 18:02:37,675 [trainer.py] => shuffle: True
+2025-09-10 18:02:37,675 [trainer.py] => init_cls: 10
+2025-09-10 18:02:37,675 [trainer.py] => increment: 10
+2025-09-10 18:02:37,675 [trainer.py] => model_name: replay
+2025-09-10 18:02:37,675 [trainer.py] => convnet_type: resnet32
+2025-09-10 18:02:37,675 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-10 18:02:37,676 [trainer.py] => seed: 1993
+2025-09-10 18:02:38,951 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-10 18:02:39,393 [trainer.py] => All params: 464154
+2025-09-10 18:02:39,394 [trainer.py] => Trainable params: 464154
+2025-09-10 18:02:39,394 [replay.py] => Learning on 0-10
+2025-09-10 18:07:20,171 [replay.py] => Task 0, Epoch 200/200 => Loss 0.060, Train_accy 99.36
+2025-09-10 18:07:20,172 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-10 18:07:20,172 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-10 18:07:24,559 [replay.py] => Exemplar size: 2000
+2025-09-10 18:07:24,560 [trainer.py] => CNN: {'total': 90.1, '00-09': 90.1, 'old': 0, 'new': 90.1}
+2025-09-10 18:07:24,560 [trainer.py] => NME: {'total': 90.0, '00-09': 90.0, 'old': 0, 'new': 90.0}
+2025-09-10 18:07:24,560 [trainer.py] => CNN top1 curve: [90.1]
+2025-09-10 18:07:24,560 [trainer.py] => CNN top5 curve: [99.4]
+2025-09-10 18:07:24,560 [trainer.py] => NME top1 curve: [90.0]
+2025-09-10 18:07:24,560 [trainer.py] => NME top5 curve: [99.5]
+
+2025-09-10 18:07:24,560 [trainer.py] => Average Accuracy (CNN): 90.1
+2025-09-10 18:07:24,560 [trainer.py] => Average Accuracy (NME): 90.0
+2025-09-10 18:07:24,560 [trainer.py] => All params: 464804
+2025-09-10 18:07:24,561 [trainer.py] => Trainable params: 464804
+2025-09-10 18:07:24,562 [replay.py] => Learning on 10-20
+2025-09-10 18:09:39,051 [replay.py] => Task 1, Epoch 70/70 => Loss 0.067, Train_accy 99.04
+2025-09-10 18:09:39,052 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-10 18:09:40,400 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-10 18:09:44,562 [replay.py] => Exemplar size: 2000
+2025-09-10 18:09:44,562 [trainer.py] => CNN: {'total': 77.25, '00-09': 76.8, '10-19': 77.7, 'old': 76.8, 'new': 77.7}
+2025-09-10 18:09:44,562 [trainer.py] => NME: {'total': 77.5, '00-09': 78.7, '10-19': 76.3, 'old': 78.7, 'new': 76.3}
+2025-09-10 18:09:44,562 [trainer.py] => CNN top1 curve: [90.1, 77.25]
+2025-09-10 18:09:44,562 [trainer.py] => CNN top5 curve: [99.4, 95.6]
+2025-09-10 18:09:44,562 [trainer.py] => NME top1 curve: [90.0, 77.5]
+2025-09-10 18:09:44,562 [trainer.py] => NME top5 curve: [99.5, 95.7]
+
+2025-09-10 18:09:44,562 [trainer.py] => Average Accuracy (CNN): 83.675
+2025-09-10 18:09:44,562 [trainer.py] => Average Accuracy (NME): 83.75
+2025-09-10 18:09:44,563 [trainer.py] => All params: 465454
+2025-09-10 18:09:44,563 [trainer.py] => Trainable params: 465454
+2025-09-10 18:09:44,563 [replay.py] => Learning on 20-30
+2025-09-10 18:12:02,233 [replay.py] => Task 2, Epoch 70/70 => Loss 0.044, Train_accy 99.64
+2025-09-10 18:12:02,233 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-10 18:12:04,890 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-10 18:12:09,132 [replay.py] => Exemplar size: 1980
+2025-09-10 18:12:09,132 [trainer.py] => CNN: {'total': 70.4, '00-09': 69.7, '10-19': 52.4, '20-29': 89.1, 'old': 61.05, 'new': 89.1}
+2025-09-10 18:12:09,132 [trainer.py] => NME: {'total': 72.27, '00-09': 73.3, '10-19': 60.8, '20-29': 82.7, 'old': 67.05, 'new': 82.7}
+2025-09-10 18:12:09,132 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4]
+2025-09-10 18:12:09,132 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23]
+2025-09-10 18:12:09,133 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27]
+2025-09-10 18:12:09,133 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3]
+
+2025-09-10 18:12:09,133 [trainer.py] => Average Accuracy (CNN): 79.25
+2025-09-10 18:12:09,133 [trainer.py] => Average Accuracy (NME): 79.92333333333333
+2025-09-10 18:12:09,133 [trainer.py] => All params: 466104
+2025-09-10 18:12:09,134 [trainer.py] => Trainable params: 466104
+2025-09-10 18:12:09,135 [replay.py] => Learning on 30-40
+2025-09-10 18:14:27,885 [replay.py] => Task 3, Epoch 70/70 => Loss 0.050, Train_accy 99.68
+2025-09-10 18:14:27,886 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-10 18:14:31,724 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-10 18:14:35,997 [replay.py] => Exemplar size: 2000
+2025-09-10 18:14:35,997 [trainer.py] => CNN: {'total': 61.3, '00-09': 58.1, '10-19': 43.1, '20-29': 60.0, '30-39': 84.0, 'old': 53.73, 'new': 84.0}
+2025-09-10 18:14:35,997 [trainer.py] => NME: {'total': 65.75, '00-09': 67.3, '10-19': 51.4, '20-29': 68.7, '30-39': 75.6, 'old': 62.47, 'new': 75.6}
+2025-09-10 18:14:35,997 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3]
+2025-09-10 18:14:35,997 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1]
+2025-09-10 18:14:35,997 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75]
+2025-09-10 18:14:35,997 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62]
+
+2025-09-10 18:14:35,997 [trainer.py] => Average Accuracy (CNN): 74.7625
+2025-09-10 18:14:35,997 [trainer.py] => Average Accuracy (NME): 76.38
+2025-09-10 18:14:35,998 [trainer.py] => All params: 466754
+2025-09-10 18:14:35,998 [trainer.py] => Trainable params: 466754
+2025-09-10 18:14:35,999 [replay.py] => Learning on 40-50
+2025-09-10 18:16:55,634 [replay.py] => Task 4, Epoch 70/70 => Loss 0.043, Train_accy 99.76
+2025-09-10 18:16:55,635 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-10 18:17:00,635 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-10 18:17:05,138 [replay.py] => Exemplar size: 2000
+2025-09-10 18:17:05,138 [trainer.py] => CNN: {'total': 57.22, '00-09': 56.1, '10-19': 37.9, '20-29': 55.0, '30-39': 47.6, '40-49': 89.5, 'old': 49.15, 'new': 89.5}
+2025-09-10 18:17:05,138 [trainer.py] => NME: {'total': 61.94, '00-09': 63.9, '10-19': 45.5, '20-29': 63.1, '30-39': 57.4, '40-49': 79.8, 'old': 57.48, 'new': 79.8}
+2025-09-10 18:17:05,138 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22]
+2025-09-10 18:17:05,138 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24]
+2025-09-10 18:17:05,138 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94]
+2025-09-10 18:17:05,138 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36]
+
+2025-09-10 18:17:05,138 [trainer.py] => Average Accuracy (CNN): 71.25399999999999
+2025-09-10 18:17:05,138 [trainer.py] => Average Accuracy (NME): 73.49199999999999
+2025-09-10 18:17:05,139 [trainer.py] => All params: 467404
+2025-09-10 18:17:05,139 [trainer.py] => Trainable params: 467404
+2025-09-10 18:17:05,140 [replay.py] => Learning on 50-60
+2025-09-10 18:19:25,334 [replay.py] => Task 5, Epoch 70/70 => Loss 0.047, Train_accy 99.69
+2025-09-10 18:19:25,334 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-10 18:19:31,494 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-10 18:19:36,068 [replay.py] => Exemplar size: 1980
+2025-09-10 18:19:36,068 [trainer.py] => CNN: {'total': 52.83, '00-09': 52.6, '10-19': 35.7, '20-29': 48.6, '30-39': 43.6, '40-49': 52.4, '50-59': 84.1, 'old': 46.58, 'new': 84.1}
+2025-09-10 18:19:36,068 [trainer.py] => NME: {'total': 58.15, '00-09': 60.3, '10-19': 42.5, '20-29': 57.1, '30-39': 51.7, '40-49': 63.0, '50-59': 74.3, 'old': 54.92, 'new': 74.3}
+2025-09-10 18:19:36,068 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22, 52.83]
+2025-09-10 18:19:36,068 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24, 81.65]
+2025-09-10 18:19:36,068 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94, 58.15]
+2025-09-10 18:19:36,068 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36, 84.52]
+
+2025-09-10 18:19:36,068 [trainer.py] => Average Accuracy (CNN): 68.18333333333332
+2025-09-10 18:19:36,068 [trainer.py] => Average Accuracy (NME): 70.93499999999999
+2025-09-10 18:19:36,069 [trainer.py] => All params: 468054
+2025-09-10 18:19:36,069 [trainer.py] => Trainable params: 468054
+2025-09-10 18:19:36,070 [replay.py] => Learning on 60-70
+2025-09-10 18:21:55,872 [replay.py] => Task 6, Epoch 70/70 => Loss 0.042, Train_accy 99.84
+2025-09-10 18:21:55,873 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-10 18:22:03,348 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-10 18:22:07,819 [replay.py] => Exemplar size: 1960
+2025-09-10 18:22:07,819 [trainer.py] => CNN: {'total': 49.53, '00-09': 49.9, '10-19': 30.6, '20-29': 49.6, '30-39': 37.2, '40-49': 50.0, '50-59': 41.1, '60-69': 88.3, 'old': 43.07, 'new': 88.3}
+2025-09-10 18:22:07,819 [trainer.py] => NME: {'total': 54.24, '00-09': 55.6, '10-19': 37.0, '20-29': 56.3, '30-39': 46.8, '40-49': 55.2, '50-59': 47.7, '60-69': 81.1, 'old': 49.77, 'new': 81.1}
+2025-09-10 18:22:07,819 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22, 52.83, 49.53]
+2025-09-10 18:22:07,819 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24, 81.65, 79.33]
+2025-09-10 18:22:07,819 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94, 58.15, 54.24]
+2025-09-10 18:22:07,819 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36, 84.52, 81.89]
+
+2025-09-10 18:22:07,819 [trainer.py] => Average Accuracy (CNN): 65.51857142857143
+2025-09-10 18:22:07,819 [trainer.py] => Average Accuracy (NME): 68.55
+2025-09-10 18:22:07,819 [trainer.py] => All params: 468704
+2025-09-10 18:22:07,820 [trainer.py] => Trainable params: 468704
+2025-09-10 18:22:07,820 [replay.py] => Learning on 70-80
+2025-09-10 18:24:28,785 [replay.py] => Task 7, Epoch 70/70 => Loss 0.051, Train_accy 99.78
+2025-09-10 18:24:28,786 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-10 18:24:37,617 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-10 18:24:42,383 [replay.py] => Exemplar size: 2000
+2025-09-10 18:24:42,383 [trainer.py] => CNN: {'total': 44.49, '00-09': 45.3, '10-19': 31.3, '20-29': 46.5, '30-39': 32.4, '40-49': 40.6, '50-59': 27.7, '60-69': 48.0, '70-79': 84.1, 'old': 38.83, 'new': 84.1}
+2025-09-10 18:24:42,383 [trainer.py] => NME: {'total': 50.55, '00-09': 54.5, '10-19': 35.8, '20-29': 53.0, '30-39': 41.1, '40-49': 47.7, '50-59': 40.2, '60-69': 57.7, '70-79': 74.4, 'old': 47.14, 'new': 74.4}
+2025-09-10 18:24:42,383 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22, 52.83, 49.53, 44.49]
+2025-09-10 18:24:42,383 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24, 81.65, 79.33, 76.38]
+2025-09-10 18:24:42,383 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94, 58.15, 54.24, 50.55]
+2025-09-10 18:24:42,383 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36, 84.52, 81.89, 79.47]
+
+2025-09-10 18:24:42,383 [trainer.py] => Average Accuracy (CNN): 62.89
+2025-09-10 18:24:42,383 [trainer.py] => Average Accuracy (NME): 66.3
+2025-09-10 18:24:42,384 [trainer.py] => All params: 469354
+2025-09-10 18:24:42,384 [trainer.py] => Trainable params: 469354
+2025-09-10 18:24:42,385 [replay.py] => Learning on 80-90
+2025-09-10 18:27:05,589 [replay.py] => Task 8, Epoch 70/70 => Loss 0.044, Train_accy 99.87
+2025-09-10 18:27:05,590 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-10 18:27:15,593 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-10 18:27:20,280 [replay.py] => Exemplar size: 1980
+2025-09-10 18:27:20,280 [trainer.py] => CNN: {'total': 42.18, '00-09': 44.8, '10-19': 25.3, '20-29': 40.8, '30-39': 33.6, '40-49': 36.8, '50-59': 33.2, '60-69': 37.1, '70-79': 40.0, '80-89': 88.0, 'old': 36.45, 'new': 88.0}
+2025-09-10 18:27:20,280 [trainer.py] => NME: {'total': 47.8, '00-09': 51.0, '10-19': 31.2, '20-29': 51.0, '30-39': 40.7, '40-49': 46.9, '50-59': 38.7, '60-69': 48.1, '70-79': 48.4, '80-89': 74.2, 'old': 44.5, 'new': 74.2}
+2025-09-10 18:27:20,280 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22, 52.83, 49.53, 44.49, 42.18]
+2025-09-10 18:27:20,280 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24, 81.65, 79.33, 76.38, 73.89]
+2025-09-10 18:27:20,280 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94, 58.15, 54.24, 50.55, 47.8]
+2025-09-10 18:27:20,280 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36, 84.52, 81.89, 79.47, 77.01]
+
+2025-09-10 18:27:20,280 [trainer.py] => Average Accuracy (CNN): 60.58888888888888
+2025-09-10 18:27:20,280 [trainer.py] => Average Accuracy (NME): 64.24444444444444
+2025-09-10 18:27:20,281 [trainer.py] => All params: 470004
+2025-09-10 18:27:20,281 [trainer.py] => Trainable params: 470004
+2025-09-10 18:27:20,281 [replay.py] => Learning on 90-100
+2025-09-10 18:29:41,826 [replay.py] => Task 9, Epoch 70/70 => Loss 0.049, Train_accy 99.79
+2025-09-10 18:29:41,827 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-10 18:29:53,062 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-10 18:29:57,874 [replay.py] => Exemplar size: 2000
+2025-09-10 18:29:57,874 [trainer.py] => CNN: {'total': 40.82, '00-09': 36.5, '10-19': 26.7, '20-29': 39.2, '30-39': 33.0, '40-49': 39.3, '50-59': 29.2, '60-69': 42.0, '70-79': 35.5, '80-89': 43.3, '90-99': 83.5, 'old': 36.08, 'new': 83.5}
+2025-09-10 18:29:57,874 [trainer.py] => NME: {'total': 45.93, '00-09': 44.2, '10-19': 31.7, '20-29': 48.8, '30-39': 38.5, '40-49': 48.7, '50-59': 34.8, '60-69': 49.8, '70-79': 42.7, '80-89': 50.3, '90-99': 69.8, 'old': 43.28, 'new': 69.8}
+2025-09-10 18:29:57,874 [trainer.py] => CNN top1 curve: [90.1, 77.25, 70.4, 61.3, 57.22, 52.83, 49.53, 44.49, 42.18, 40.82]
+2025-09-10 18:29:57,874 [trainer.py] => CNN top5 curve: [99.4, 95.6, 92.23, 89.1, 85.24, 81.65, 79.33, 76.38, 73.89, 72.17]
+2025-09-10 18:29:57,874 [trainer.py] => NME top1 curve: [90.0, 77.5, 72.27, 65.75, 61.94, 58.15, 54.24, 50.55, 47.8, 45.93]
+2025-09-10 18:29:57,874 [trainer.py] => NME top5 curve: [99.5, 95.7, 93.3, 90.62, 87.36, 84.52, 81.89, 79.47, 77.01, 75.66]
+
+--------------------------------------------------------
+USING OCCE LOSS AND 1 GPU (gamma = 0.05)
+--------------------------------------------------------
+
+2025-09-10 18:29:57,874 [trainer.py] => Average Accuracy (CNN): 58.612
+2025-09-10 18:29:57,874 [trainer.py] => Average Accuracy (NME): 62.41299999999999
+2025-09-10 18:29:57,875 [trainer.py] => Forgetting (CNN): 50.02222222222222
+2025-09-10 18:29:57,876 [trainer.py] => Forgetting (NME): 35.43333333333333
+2025-09-10 19:01:52,316 [trainer.py] => config: ./exps/replay.json
+2025-09-10 19:01:52,316 [trainer.py] => prefix: reproduce
+2025-09-10 19:01:52,316 [trainer.py] => dataset: cifar100
+2025-09-10 19:01:52,316 [trainer.py] => memory_size: 2000
+2025-09-10 19:01:52,316 [trainer.py] => memory_per_class: 20
+2025-09-10 19:01:52,317 [trainer.py] => fixed_memory: False
+2025-09-10 19:01:52,317 [trainer.py] => shuffle: True
+2025-09-10 19:01:52,317 [trainer.py] => init_cls: 10
+2025-09-10 19:01:52,317 [trainer.py] => increment: 10
+2025-09-10 19:01:52,317 [trainer.py] => model_name: replay
+2025-09-10 19:01:52,317 [trainer.py] => convnet_type: resnet32
+2025-09-10 19:01:52,317 [trainer.py] => device: [device(type='cuda', index=1)]
+2025-09-10 19:01:52,317 [trainer.py] => seed: 1993
+2025-09-10 19:01:53,599 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2025-09-10 19:01:54,050 [trainer.py] => All params: 464154
+2025-09-10 19:01:54,050 [trainer.py] => Trainable params: 464154
+2025-09-10 19:01:54,051 [replay.py] => Learning on 0-10
+2025-09-10 19:06:35,340 [replay.py] => Task 0, Epoch 200/200 => Loss 0.059, Train_accy 99.22
+2025-09-10 19:06:35,340 [base.py] => Reducing exemplars...(200 per classes)
+2025-09-10 19:06:35,341 [base.py] => Constructing exemplars...(200 per classes)
+2025-09-10 19:06:39,691 [replay.py] => Exemplar size: 2000
+2025-09-10 19:06:39,692 [trainer.py] => CNN: {'total': 89.2, '00-09': 89.2, 'old': 0, 'new': 89.2}
+2025-09-10 19:06:39,692 [trainer.py] => NME: {'total': 89.1, '00-09': 89.1, 'old': 0, 'new': 89.1}
+2025-09-10 19:06:39,692 [trainer.py] => CNN top1 curve: [89.2]
+2025-09-10 19:06:39,692 [trainer.py] => CNN top5 curve: [99.6]
+2025-09-10 19:06:39,692 [trainer.py] => NME top1 curve: [89.1]
+2025-09-10 19:06:39,692 [trainer.py] => NME top5 curve: [99.6]
+
+2025-09-10 19:06:39,692 [trainer.py] => Average Accuracy (CNN): 89.2
+2025-09-10 19:06:39,692 [trainer.py] => Average Accuracy (NME): 89.1
+2025-09-10 19:06:39,692 [trainer.py] => All params: 464804
+2025-09-10 19:06:39,693 [trainer.py] => Trainable params: 464804
+2025-09-10 19:06:39,693 [replay.py] => Learning on 10-20
+2025-09-10 19:08:55,077 [replay.py] => Task 1, Epoch 70/70 => Loss 0.098, Train_accy 98.53
+2025-09-10 19:08:55,078 [base.py] => Reducing exemplars...(100 per classes)
+2025-09-10 19:08:56,403 [base.py] => Constructing exemplars...(100 per classes)
+2025-09-10 19:09:00,806 [replay.py] => Exemplar size: 2000
+2025-09-10 19:09:00,807 [trainer.py] => CNN: {'total': 77.45, '00-09': 77.0, '10-19': 77.9, 'old': 77.0, 'new': 77.9}
+2025-09-10 19:09:00,807 [trainer.py] => NME: {'total': 78.0, '00-09': 80.2, '10-19': 75.8, 'old': 80.2, 'new': 75.8}
+2025-09-10 19:09:00,807 [trainer.py] => CNN top1 curve: [89.2, 77.45]
+2025-09-10 19:09:00,807 [trainer.py] => CNN top5 curve: [99.6, 95.7]
+2025-09-10 19:09:00,807 [trainer.py] => NME top1 curve: [89.1, 78.0]
+2025-09-10 19:09:00,807 [trainer.py] => NME top5 curve: [99.6, 96.35]
+
+2025-09-10 19:09:00,808 [trainer.py] => Average Accuracy (CNN): 83.325
+2025-09-10 19:09:00,808 [trainer.py] => Average Accuracy (NME): 83.55
+2025-09-10 19:09:00,808 [trainer.py] => All params: 465454
+2025-09-10 19:09:00,809 [trainer.py] => Trainable params: 465454
+2025-09-10 19:09:00,810 [replay.py] => Learning on 20-30
+2025-09-10 19:11:17,962 [replay.py] => Task 2, Epoch 70/70 => Loss 0.066, Train_accy 99.41
+2025-09-10 19:11:17,963 [base.py] => Reducing exemplars...(66 per classes)
+2025-09-10 19:11:20,692 [base.py] => Constructing exemplars...(66 per classes)
+2025-09-10 19:11:25,096 [replay.py] => Exemplar size: 1980
+2025-09-10 19:11:25,096 [trainer.py] => CNN: {'total': 70.63, '00-09': 69.3, '10-19': 53.9, '20-29': 88.7, 'old': 61.6, 'new': 88.7}
+2025-09-10 19:11:25,096 [trainer.py] => NME: {'total': 73.03, '00-09': 73.4, '10-19': 61.4, '20-29': 84.3, 'old': 67.4, 'new': 84.3}
+2025-09-10 19:11:25,096 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63]
+2025-09-10 19:11:25,096 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1]
+2025-09-10 19:11:25,096 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03]
+2025-09-10 19:11:25,097 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67]
+
+2025-09-10 19:11:25,097 [trainer.py] => Average Accuracy (CNN): 79.09333333333333
+2025-09-10 19:11:25,097 [trainer.py] => Average Accuracy (NME): 80.04333333333334
+2025-09-10 19:11:25,097 [trainer.py] => All params: 466104
+2025-09-10 19:11:25,097 [trainer.py] => Trainable params: 466104
+2025-09-10 19:11:25,098 [replay.py] => Learning on 30-40
+2025-09-10 19:13:42,267 [replay.py] => Task 3, Epoch 70/70 => Loss 0.077, Train_accy 99.48
+2025-09-10 19:13:42,267 [base.py] => Reducing exemplars...(50 per classes)
+2025-09-10 19:13:46,243 [base.py] => Constructing exemplars...(50 per classes)
+2025-09-10 19:13:50,511 [replay.py] => Exemplar size: 2000
+2025-09-10 19:13:50,511 [trainer.py] => CNN: {'total': 62.02, '00-09': 60.3, '10-19': 44.9, '20-29': 60.9, '30-39': 82.0, 'old': 55.37, 'new': 82.0}
+2025-09-10 19:13:50,511 [trainer.py] => NME: {'total': 65.6, '00-09': 65.6, '10-19': 53.4, '20-29': 67.4, '30-39': 76.0, 'old': 62.13, 'new': 76.0}
+2025-09-10 19:13:50,511 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02]
+2025-09-10 19:13:50,511 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15]
+2025-09-10 19:13:50,511 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6]
+2025-09-10 19:13:50,511 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42]
+
+2025-09-10 19:13:50,511 [trainer.py] => Average Accuracy (CNN): 74.825
+2025-09-10 19:13:50,511 [trainer.py] => Average Accuracy (NME): 76.4325
+2025-09-10 19:13:50,512 [trainer.py] => All params: 466754
+2025-09-10 19:13:50,512 [trainer.py] => Trainable params: 466754
+2025-09-10 19:13:50,512 [replay.py] => Learning on 40-50
+2025-09-10 19:16:05,605 [replay.py] => Task 4, Epoch 70/70 => Loss 0.066, Train_accy 99.76
+2025-09-10 19:16:05,606 [base.py] => Reducing exemplars...(40 per classes)
+2025-09-10 19:16:10,678 [base.py] => Constructing exemplars...(40 per classes)
+2025-09-10 19:16:15,141 [replay.py] => Exemplar size: 2000
+2025-09-10 19:16:15,141 [trainer.py] => CNN: {'total': 56.04, '00-09': 52.6, '10-19': 36.6, '20-29': 53.5, '30-39': 48.7, '40-49': 88.8, 'old': 47.85, 'new': 88.8}
+2025-09-10 19:16:15,142 [trainer.py] => NME: {'total': 61.04, '00-09': 61.1, '10-19': 43.3, '20-29': 60.7, '30-39': 58.2, '40-49': 81.9, 'old': 55.82, 'new': 81.9}
+2025-09-10 19:16:15,142 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04]
+2025-09-10 19:16:15,142 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76]
+2025-09-10 19:16:15,142 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04]
+2025-09-10 19:16:15,142 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14]
+
+2025-09-10 19:16:15,142 [trainer.py] => Average Accuracy (CNN): 71.06800000000001
+2025-09-10 19:16:15,142 [trainer.py] => Average Accuracy (NME): 73.35400000000001
+2025-09-10 19:16:15,142 [trainer.py] => All params: 467404
+2025-09-10 19:16:15,143 [trainer.py] => Trainable params: 467404
+2025-09-10 19:16:15,144 [replay.py] => Learning on 50-60
+2025-09-10 19:18:31,069 [replay.py] => Task 5, Epoch 70/70 => Loss 0.077, Train_accy 99.63
+2025-09-10 19:18:31,070 [base.py] => Reducing exemplars...(33 per classes)
+2025-09-10 19:18:37,462 [base.py] => Constructing exemplars...(33 per classes)
+2025-09-10 19:18:41,999 [replay.py] => Exemplar size: 1980
+2025-09-10 19:18:41,999 [trainer.py] => CNN: {'total': 50.47, '00-09': 44.5, '10-19': 34.1, '20-29': 45.5, '30-39': 40.2, '40-49': 55.1, '50-59': 83.4, 'old': 43.88, 'new': 83.4}
+2025-09-10 19:18:41,999 [trainer.py] => NME: {'total': 55.77, '00-09': 52.6, '10-19': 40.2, '20-29': 52.8, '30-39': 49.7, '40-49': 63.5, '50-59': 75.8, 'old': 51.76, 'new': 75.8}
+2025-09-10 19:18:41,999 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04, 50.47]
+2025-09-10 19:18:41,999 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76, 80.93]
+2025-09-10 19:18:41,999 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04, 55.77]
+2025-09-10 19:18:41,999 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14, 82.62]
+
+2025-09-10 19:18:41,999 [trainer.py] => Average Accuracy (CNN): 67.635
+2025-09-10 19:18:41,999 [trainer.py] => Average Accuracy (NME): 70.42333333333333
+2025-09-10 19:18:42,000 [trainer.py] => All params: 468054
+2025-09-10 19:18:42,000 [trainer.py] => Trainable params: 468054
+2025-09-10 19:18:42,001 [replay.py] => Learning on 60-70
+2025-09-10 19:20:57,530 [replay.py] => Task 6, Epoch 70/70 => Loss 0.070, Train_accy 99.84
+2025-09-10 19:20:57,531 [base.py] => Reducing exemplars...(28 per classes)
+2025-09-10 19:21:05,134 [base.py] => Constructing exemplars...(28 per classes)
+2025-09-10 19:21:09,696 [replay.py] => Exemplar size: 1960
+2025-09-10 19:21:09,696 [trainer.py] => CNN: {'total': 48.87, '00-09': 50.1, '10-19': 29.4, '20-29': 47.3, '30-39': 33.5, '40-49': 52.6, '50-59': 40.0, '60-69': 89.2, 'old': 42.15, 'new': 89.2}
+2025-09-10 19:21:09,696 [trainer.py] => NME: {'total': 54.33, '00-09': 54.2, '10-19': 37.2, '20-29': 54.4, '30-39': 43.7, '40-49': 59.2, '50-59': 50.1, '60-69': 81.5, 'old': 49.8, 'new': 81.5}
+2025-09-10 19:21:09,696 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04, 50.47, 48.87]
+2025-09-10 19:21:09,696 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76, 80.93, 78.96]
+2025-09-10 19:21:09,696 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04, 55.77, 54.33]
+2025-09-10 19:21:09,696 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14, 82.62, 80.97]
+
+2025-09-10 19:21:09,696 [trainer.py] => Average Accuracy (CNN): 64.95428571428572
+2025-09-10 19:21:09,696 [trainer.py] => Average Accuracy (NME): 68.12428571428572
+2025-09-10 19:21:09,697 [trainer.py] => All params: 468704
+2025-09-10 19:21:09,697 [trainer.py] => Trainable params: 468704
+2025-09-10 19:21:09,697 [replay.py] => Learning on 70-80
+2025-09-10 19:23:25,625 [replay.py] => Task 7, Epoch 70/70 => Loss 0.081, Train_accy 99.70
+2025-09-10 19:23:25,626 [base.py] => Reducing exemplars...(25 per classes)
+2025-09-10 19:23:34,503 [base.py] => Constructing exemplars...(25 per classes)
+2025-09-10 19:23:39,244 [replay.py] => Exemplar size: 2000
+2025-09-10 19:23:39,244 [trainer.py] => CNN: {'total': 43.18, '00-09': 42.8, '10-19': 29.4, '20-29': 43.1, '30-39': 30.5, '40-49': 43.2, '50-59': 25.8, '60-69': 45.6, '70-79': 85.0, 'old': 37.2, 'new': 85.0}
+2025-09-10 19:23:39,244 [trainer.py] => NME: {'total': 49.92, '00-09': 52.4, '10-19': 35.4, '20-29': 49.7, '30-39': 40.1, '40-49': 52.3, '50-59': 37.4, '60-69': 55.8, '70-79': 76.3, 'old': 46.16, 'new': 76.3}
+2025-09-10 19:23:39,244 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04, 50.47, 48.87, 43.18]
+2025-09-10 19:23:39,244 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76, 80.93, 78.96, 75.95]
+2025-09-10 19:23:39,244 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04, 55.77, 54.33, 49.92]
+2025-09-10 19:23:39,244 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14, 82.62, 80.97, 78.95]
+
+2025-09-10 19:23:39,244 [trainer.py] => Average Accuracy (CNN): 62.23250000000001
+2025-09-10 19:23:39,244 [trainer.py] => Average Accuracy (NME): 65.84875
+2025-09-10 19:23:39,245 [trainer.py] => All params: 469354
+2025-09-10 19:23:39,245 [trainer.py] => Trainable params: 469354
+2025-09-10 19:23:39,246 [replay.py] => Learning on 80-90
+2025-09-10 19:25:56,799 [replay.py] => Task 8, Epoch 70/70 => Loss 0.076, Train_accy 99.87
+2025-09-10 19:25:56,800 [base.py] => Reducing exemplars...(22 per classes)
+2025-09-10 19:26:06,924 [base.py] => Constructing exemplars...(22 per classes)
+2025-09-10 19:26:11,692 [replay.py] => Exemplar size: 1980
+2025-09-10 19:26:11,692 [trainer.py] => CNN: {'total': 41.3, '00-09': 40.2, '10-19': 24.9, '20-29': 37.1, '30-39': 29.9, '40-49': 41.6, '50-59': 31.2, '60-69': 37.6, '70-79': 40.3, '80-89': 88.9, 'old': 35.35, 'new': 88.9}
+2025-09-10 19:26:11,692 [trainer.py] => NME: {'total': 48.34, '00-09': 48.5, '10-19': 31.2, '20-29': 48.3, '30-39': 37.7, '40-49': 50.2, '50-59': 40.1, '60-69': 48.8, '70-79': 53.7, '80-89': 76.6, 'old': 44.81, 'new': 76.6}
+2025-09-10 19:26:11,693 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04, 50.47, 48.87, 43.18, 41.3]
+2025-09-10 19:26:11,693 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76, 80.93, 78.96, 75.95, 73.4]
+2025-09-10 19:26:11,693 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04, 55.77, 54.33, 49.92, 48.34]
+2025-09-10 19:26:11,693 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14, 82.62, 80.97, 78.95, 76.02]
+
+2025-09-10 19:26:11,693 [trainer.py] => Average Accuracy (CNN): 59.90666666666667
+2025-09-10 19:26:11,693 [trainer.py] => Average Accuracy (NME): 63.903333333333336
+2025-09-10 19:26:11,693 [trainer.py] => All params: 470004
+2025-09-10 19:26:11,693 [trainer.py] => Trainable params: 470004
+2025-09-10 19:26:11,694 [replay.py] => Learning on 90-100
+2025-09-10 19:28:30,671 [replay.py] => Task 9, Epoch 70/70 => Loss 0.086, Train_accy 99.68
+2025-09-10 19:28:30,672 [base.py] => Reducing exemplars...(20 per classes)
+2025-09-10 19:28:42,028 [base.py] => Constructing exemplars...(20 per classes)
+2025-09-10 19:28:46,954 [replay.py] => Exemplar size: 2000
+2025-09-10 19:28:46,954 [trainer.py] => CNN: {'total': 39.66, '00-09': 38.0, '10-19': 26.0, '20-29': 36.0, '30-39': 28.2, '40-49': 39.9, '50-59': 25.6, '60-69': 38.6, '70-79': 37.0, '80-89': 44.8, '90-99': 82.5, 'old': 34.9, 'new': 82.5}
+2025-09-10 19:28:46,954 [trainer.py] => NME: {'total': 45.44, '00-09': 47.7, '10-19': 31.2, '20-29': 43.7, '30-39': 34.7, '40-49': 48.3, '50-59': 34.5, '60-69': 46.4, '70-79': 45.8, '80-89': 51.0, '90-99': 71.1, 'old': 42.59, 'new': 71.1}
+2025-09-10 19:28:46,954 [trainer.py] => CNN top1 curve: [89.2, 77.45, 70.63, 62.02, 56.04, 50.47, 48.87, 43.18, 41.3, 39.66]
+2025-09-10 19:28:46,954 [trainer.py] => CNN top5 curve: [99.6, 95.7, 91.1, 88.15, 84.76, 80.93, 78.96, 75.95, 73.4, 71.58]
+2025-09-10 19:28:46,954 [trainer.py] => NME top1 curve: [89.1, 78.0, 73.03, 65.6, 61.04, 55.77, 54.33, 49.92, 48.34, 45.44]
+2025-09-10 19:28:46,954 [trainer.py] => NME top5 curve: [99.6, 96.35, 92.67, 89.42, 86.14, 82.62, 80.97, 78.95, 76.02, 74.67]
+
+2025-09-10 19:28:46,954 [trainer.py] => Average Accuracy (CNN): 57.882000000000005
+2025-09-10 19:28:46,954 [trainer.py] => Average Accuracy (NME): 62.056999999999995
+2025-09-10 19:28:46,955 [trainer.py] => Forgetting (CNN): 51.00000000000001
+2025-09-10 19:28:46,955 [trainer.py] => Forgetting (NME): 37.111111111111114

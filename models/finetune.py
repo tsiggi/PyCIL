@@ -13,7 +13,9 @@ from utils.toolkit import target2onehot, tensor2numpy
 
 # Param for One Cold Cross Entropy
 from utils.occe import OCCELoss
-gamma = 0.01 # tried: [] - should try: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
+occe = OCCELoss()
+enable_occe = True
+gamma = 0.1 # tried: [0.01, 0.05] - should try: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
 
 init_epoch = 200
 init_lr = 0.1
@@ -107,7 +109,9 @@ class Finetune(BaseLearner):
 
                 # TODO : check witch one is correct
                 # loss = F.cross_entropy(logits, targets) + gamma * OCCELoss(logits, target2onehot(targets, self._total_classes))
-                loss = F.cross_entropy(logits, targets) + gamma * OCCELoss(logits, targets)
+                # loss = F.cross_entropy(logits, targets) + gamma * occe(logits, targets)
+                ce = F.cross_entropy(logits, targets)
+                loss = ce if not enable_occe else ce + gamma * occe(logits, targets)
 
                 optimizer.zero_grad()
                 loss.backward()
@@ -159,9 +163,9 @@ class Finetune(BaseLearner):
                 loss_clf = F.cross_entropy(
                     logits[:, self._known_classes :], fake_targets
                 )
-                occe = OCCELoss(logits[:, self._known_classes :], fake_targets)
+                occe_loss = occe(logits[:, self._known_classes :], fake_targets)
 
-                loss = loss_clf + gamma * occe
+                loss = loss_clf if not enable_occe else loss_clf + gamma * occe_loss
 
                 optimizer.zero_grad()
                 loss.backward()
