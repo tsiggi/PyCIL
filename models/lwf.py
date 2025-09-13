@@ -11,6 +11,10 @@ from utils.inc_net import IncrementalNet
 from models.base import BaseLearner
 from utils.toolkit import target2onehot, tensor2numpy
 
+# Param for One Cold Cross Entropy
+from utils.occe import OCCELoss
+occe = OCCELoss()
+
 init_epoch = 200
 init_lr = 0.1
 init_milestones = [60, 120, 160]
@@ -18,9 +22,9 @@ init_lr_decay = 0.1
 init_weight_decay = 0.0005
 
 
-epochs = 250
+epochs = 150
 lrate = 0.1
-milestones = [60, 120, 180, 220]
+milestones = [60, 100, 130]
 lrate_decay = 0.1
 batch_size = 128
 weight_decay = 2e-4
@@ -33,6 +37,8 @@ class LwF(BaseLearner):
     def __init__(self, args):
         super().__init__(args)
         self._network = IncrementalNet(args, False)
+        self.gamma = args["gamma"]
+        logging.info("Using gamma {}".format(self.gamma))
 
     def after_task(self):
         self._old_network = self._network.copy().freeze()
@@ -107,7 +113,7 @@ class LwF(BaseLearner):
                 inputs, targets = inputs.to(self._device), targets.to(self._device)
                 logits = self._network(inputs)["logits"]
 
-                loss = F.cross_entropy(logits, targets)
+                loss = F.cross_entropy(logits, targets) + self.gamma * occe(logits, targets)
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -157,13 +163,15 @@ class LwF(BaseLearner):
                 loss_clf = F.cross_entropy(
                     logits[:, self._known_classes :], fake_targets
                 )
+                occe_loss = occe(logits[:, self._known_classes :], fake_targets)
+                # TODO : only here for self._known_classes : 
                 loss_kd = _KD_loss(
                     logits[:, : self._known_classes],
                     self._old_network(inputs)["logits"],
                     T,
                 )
 
-                loss = lamda * loss_kd + loss_clf
+                loss = lamda * loss_kd + loss_clf + self.gamma * occe_loss 
 
                 optimizer.zero_grad()
                 loss.backward()
