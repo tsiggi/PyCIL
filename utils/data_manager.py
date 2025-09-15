@@ -11,6 +11,7 @@ class DataManager(object):
     def __init__(self, dataset_name, shuffle, seed, init_cls, increment, aug=1):
         self.dataset_name = dataset_name
         self.aug = aug
+        self._seed = seed
         self._setup_data(dataset_name, shuffle, seed)
         assert init_cls <= len(self._class_order), "No enough classes."
         self._increments = [init_cls]
@@ -34,7 +35,7 @@ class DataManager(object):
         return len(self._class_order)
 
     def get_dataset(
-        self, indices, source, mode, appendent=None, ret_data=False, m_rate=None
+        self, indices, source, mode, few_shot=None, appendent=None, ret_data=False, m_rate=None
     ):
         if source == "train":
             x, y = self._train_data, self._train_targets
@@ -68,6 +69,17 @@ class DataManager(object):
                 class_data, class_targets = self._select_rmm(
                     x, y, low_range=idx, high_range=idx + 1, m_rate=m_rate
                 )
+            
+            # Few-shot
+            if few_shot is not None and few_shot > 0:
+                if len(class_data) > few_shot:
+                    np.random.seed(self._seed)
+                    val_indx = np.random.choice(
+                        len(class_data), few_shot, replace=False
+                    )
+                    class_data = class_data[val_indx]
+                    class_targets = class_targets[val_indx]
+            
             data.append(class_data)
             targets.append(class_targets)
 

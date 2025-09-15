@@ -37,8 +37,8 @@ class LwF(BaseLearner):
     def __init__(self, args):
         super().__init__(args)
         self._network = IncrementalNet(args, False)
-        self.gamma = args["gamma"]
-        logging.info("Using gamma {}".format(self.gamma))
+        self._gamma = args["gamma"]
+        self._few_shot = args["few_shot"] if "few_shot" in args else None
 
     def after_task(self):
         self._old_network = self._network.copy().freeze()
@@ -58,7 +58,12 @@ class LwF(BaseLearner):
             np.arange(self._known_classes, self._total_classes),
             source="train",
             mode="train",
+            few_shot=self._few_shot
         )
+        
+        print("- '{}' samples per class.".format(len(train_dataset)//(data_manager.get_task_size(self._cur_task))))
+        exit()
+
         self.train_loader = DataLoader(
             train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers
         )
@@ -113,7 +118,7 @@ class LwF(BaseLearner):
                 inputs, targets = inputs.to(self._device), targets.to(self._device)
                 logits = self._network(inputs)["logits"]
 
-                loss = F.cross_entropy(logits, targets) + self.gamma * occe(logits, targets)
+                loss = F.cross_entropy(logits, targets) + self._gamma * occe(logits, targets)
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
@@ -171,7 +176,7 @@ class LwF(BaseLearner):
                     T,
                 )
 
-                loss = lamda * loss_kd + loss_clf + self.gamma * occe_loss 
+                loss = lamda * loss_kd + loss_clf + self._gamma * occe_loss 
 
                 optimizer.zero_grad()
                 loss.backward()
