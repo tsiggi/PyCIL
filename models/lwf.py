@@ -60,9 +60,7 @@ class LwF(BaseLearner):
             mode="train",
             few_shot=self._few_shot
         )
-        
-        print("- '{}' samples per class.".format(len(train_dataset)//(data_manager.get_task_size(self._cur_task))))
-        exit()
+        # print("- '{}' samples per class.".format(len(train_dataset)//(data_manager.get_task_size(self._cur_task))))
 
         self.train_loader = DataLoader(
             train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers
