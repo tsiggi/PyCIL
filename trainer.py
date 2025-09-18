@@ -11,12 +11,22 @@ import numpy as np
 
 def train(args):
     seed_list = copy.deepcopy(args["seed"])
+    gamma_list = copy.deepcopy(args["gamma"])
     device = copy.deepcopy(args["device"])
+    kd_gamma = args.get("kd_gamma", None)
+    kd_gamma_list =  copy.deepcopy(kd_gamma) if kd_gamma is not None else [None]
+    
 
-    for seed in seed_list:
-        args["seed"] = seed
-        args["device"] = device
-        _train(args)
+    for kd_gamma in kd_gamma_list:
+        args["kd_gamma"] = kd_gamma
+
+        for gamma in gamma_list:
+            args["gamma"] = gamma
+
+            for seed in seed_list:
+                args["seed"] = seed
+                args["device"] = device
+                _train(args)
 
 
 def _train(args):
@@ -59,6 +69,7 @@ def _train(args):
     model = factory.get_model(args["model_name"], args)
 
     cnn_curve, nme_curve = {"top1": [], "top5": []}, {"top1": [], "top5": []}
+    cnn_curve2 = {"top1": [], "top5": []}
     cnn_matrix, nme_matrix = [], []
 
     for task in range(data_manager.nb_tasks):
@@ -102,23 +113,41 @@ def _train(args):
             logging.info("Average Accuracy (CNN): {}".format(sum(cnn_curve["top1"])/len(cnn_curve["top1"])))
             logging.info("Average Accuracy (NME): {}".format(sum(nme_curve["top1"])/len(nme_curve["top1"])))
         else:
-            logging.info("No NME accuracy.")
-            logging.info("CNN: {}".format(cnn_accy["grouped"]))
+            if model._dual_head :
+                cnn_accy, cnn_accy2 = cnn_accy # CE head, OCCE head
+            
+            logging.info("CNN (CE head): {}".format(cnn_accy["grouped"]))
+            if model._dual_head :
+                logging.info("CNN (OCCE head): {}".format(cnn_accy2["grouped"]))
 
-            cnn_keys = [key for key in cnn_accy["grouped"].keys() if '-' in key]
-            cnn_keys_sorted = sorted(cnn_keys)
-            cnn_values = [cnn_accy["grouped"][key] for key in cnn_keys_sorted]
-            cnn_matrix.append(cnn_values)
+            cnn_curve["top1"].append(cnn_accy["top1"])  # CE head
+            cnn_curve["top5"].append(cnn_accy["top5"])  # CE head
 
-            cnn_curve["top1"].append(cnn_accy["top1"])
-            cnn_curve["top5"].append(cnn_accy["top5"])
+            if not model._dual_head :
+                cnn_keys = [key for key in cnn_accy["grouped"].keys() if '-' in key]
+                cnn_keys_sorted = sorted(cnn_keys)
+                cnn_values = [cnn_accy["grouped"][key] for key in cnn_keys_sorted]
+                cnn_matrix.append(cnn_values)
 
-            logging.info("CNN top1 curve: {}".format(cnn_curve["top1"]))
-            logging.info("CNN top5 curve: {}\n".format(cnn_curve["top5"]))
+                logging.info("CNN top1 curve: {}".format(cnn_curve["top1"]))
+                logging.info("CNN top5 curve: {}\n".format(cnn_curve["top5"]))
 
-            print('Average Accuracy (CNN):', sum(cnn_curve["top1"])/len(cnn_curve["top1"]))
-            logging.info("Average Accuracy (CNN): {}".format(sum(cnn_curve["top1"])/len(cnn_curve["top1"])))
+                print('Average Accuracy (CNN):', sum(cnn_curve["top1"])/len(cnn_curve["top1"]))
+                logging.info("Average Accuracy (CNN): {}".format(sum(cnn_curve["top1"])/len(cnn_curve["top1"])))
 
+            else :
+                cnn_curve2["top1"].append(cnn_accy2["top1"]) # OCCE head
+                cnn_curve2["top5"].append(cnn_accy2["top5"]) # OCCE head
+
+                logging.info("[HEAD #1] CNN top1 curve: {}".format(cnn_curve["top1"]))
+                logging.info("[HEAD #2] CNN top1 curve: {}".format(cnn_curve2["top1"]))
+                logging.info("[HEAD #1] CNN top5 curve: {}".format(cnn_curve["top5"]))
+                logging.info("[HEAD #2] CNN top5 curve: {}\n".format(cnn_curve2["top5"]))
+
+                print('Average Accuracy (CNN Head #1):', sum(cnn_curve["top1"])/len(cnn_curve["top1"]))
+                print('Average Accuracy (CNN Head #2):', sum(cnn_curve2["top1"])/len(cnn_curve2["top1"]))
+                logging.info("Average Accuracy (CNN Head #1): {}".format(sum(cnn_curve["top1"])/len(cnn_curve["top1"])))
+                logging.info("Average Accuracy (CNN Head #2): {}".format(sum(cnn_curve2["top1"])/len(cnn_curve2["top1"])))
 
     if len(cnn_matrix)>0:
         np_acctable = np.zeros([task + 1, task + 1])
