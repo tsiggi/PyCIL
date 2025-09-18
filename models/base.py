@@ -26,6 +26,7 @@ class BaseLearner(object):
         self._memory_size = args["memory_size"]
         self._memory_per_class = args.get("memory_per_class", None)
         self._fixed_memory = args.get("fixed_memory", False)
+        self._dual_head = args.get("dual_head_for_occe", False)
         self._device = args["device"][0]
         self._multiple_gpus = args["device"]
 
@@ -82,9 +83,15 @@ class BaseLearner(object):
         return ret
 
     def eval_task(self, save_conf=False):
-        y_pred, y_true = self._eval_cnn(self.test_loader)
-        cnn_accy = self._evaluate(y_pred, y_true)
-
+        if not self._dual_head :
+            y_pred, y_true = self._eval_cnn(self.test_loader)
+            cnn_accy = self._evaluate(y_pred, y_true)
+        else :
+            y_pred, y_true = self._eval_cnn(self.test_loader)
+            cnn_accy = self._evaluate(y_pred['ce_head'], y_true)
+            cnn_accy2 = self._evaluate(y_pred['occe_head'], y_true)
+            return (cnn_accy, cnn_accy2), None
+        
         if hasattr(self, "_class_means"):
             y_pred, y_true = self._eval_nme(self.test_loader, self._class_means)
             nme_accy = self._evaluate(y_pred, y_true)
@@ -120,32 +127,48 @@ class BaseLearner(object):
 
     def _compute_accuracy(self, model, loader):
         model.eval()
-        correct, total = 0, 0
+        correct, correct_head_2, total = 0, 0, 0
         for i, (_, inputs, targets) in enumerate(loader):
             inputs = inputs.to(self._device)
             with torch.no_grad():
-                outputs = model(inputs)["logits"]
+                if self._dual_head :
+                    outputs, outputs2 = model(inputs)[0]['logits'], model(inputs)[1]['logits']
+                    predicts_head_2 = torch.max(-outputs2, dim=1)[1]
+                    correct_head_2 += (predicts_head_2.cpu() == targets).sum()
+                else : 
+                    outputs = model(inputs)["logits"]
+
             predicts = torch.max(outputs, dim=1)[1]
             correct += (predicts.cpu() == targets).sum()
             total += len(targets)
 
+        if self._dual_head:
+            return {"ce_head": np.around(tensor2numpy(correct) * 100 / total, decimals=2), "occe_head": np.around(tensor2numpy(correct_head_2) * 100 / total, decimals=2)}
         return np.around(tensor2numpy(correct) * 100 / total, decimals=2)
 
     def _eval_cnn(self, loader):
         self._network.eval()
-        y_pred, y_true = [], []
+        y_pred, y_pred2, y_true = [], [], []
         for _, (_, inputs, targets) in enumerate(loader):
             inputs = inputs.to(self._device)
             with torch.no_grad():
-                outputs = self._network(inputs)["logits"]
+                outputs = self._network(inputs)["logits"] if not self._dual_head else self._network(inputs)[0]["logits"]
+                outputs2 = self._network(inputs)[1]["logits"] if self._dual_head else None
             predicts = torch.topk(
                 outputs, k=self.topk, dim=1, largest=True, sorted=True
             )[
                 1
             ]  # [bs, topk]
+            if self._dual_head and outputs2 is not None:
+                predicts2 = torch.topk(
+                    -outputs2, k=self.topk, dim=1, largest=True, sorted=True
+                )[1]  # [bs, topk]
+                y_pred2.append(predicts2.cpu().numpy())
             y_pred.append(predicts.cpu().numpy())
             y_true.append(targets.cpu().numpy())
 
+        if self._dual_head : 
+            return {'ce_head': np.concatenate(y_pred), 'occe_head': np.concatenate(y_pred2)}, np.concatenate(y_true)  
         return np.concatenate(y_pred), np.concatenate(y_true)  # [N, topk]
 
     def _eval_nme(self, loader, class_means):

@@ -63,6 +63,7 @@ class BaseNet(nn.Module):
 
         self.convnet = get_convnet(args, pretrained)
         self.fc = None
+        self.occe_head = None # for dual head
 
     @property
     def feature_dim(self):
@@ -122,6 +123,7 @@ class BaseNet(nn.Module):
 class IncrementalNet(BaseNet):
     def __init__(self, args, pretrained, gradcam=False):
         super().__init__(args, pretrained)
+        self._dual_head =  args.get("dual_head_for_occe", False)
         self.gradcam = gradcam
         if hasattr(self, "gradcam") and self.gradcam:
             self._gradcam_hooks = [None, None]
@@ -139,6 +141,21 @@ class IncrementalNet(BaseNet):
         del self.fc
         self.fc = fc
 
+        # return if there is not onother fc (occe head)
+        if not self._dual_head :
+            return
+
+        occe_head = self.generate_fc(self.feature_dim, nb_classes)
+        if self.occe_head is not None:
+            nb_output = self.occe_head.out_features
+            weight = copy.deepcopy(self.occe_head.weight.data)
+            bias = copy.deepcopy(self.occe_head.bias.data)
+            occe_head.weight.data[:nb_output] = weight
+            occe_head.bias.data[:nb_output] = bias
+        
+        del self.occe_head
+        self.occe_head = occe_head
+        
     def weight_align(self, increment):
         weights = self.fc.weight.data
         newnorm = torch.norm(weights[-increment:, :], p=2, dim=1)
@@ -149,6 +166,18 @@ class IncrementalNet(BaseNet):
         print("alignweights,gamma=", gamma)
         self.fc.weight.data[-increment:, :] *= gamma
 
+        if not self._dual_head :
+            return
+        
+        weights = self.occe_head.weight.data
+        newnorm = torch.norm(weights[-increment:, :], p=2, dim=1)
+        oldnorm = torch.norm(weights[:-increment, :], p=2, dim=1)
+        meannew = torch.mean(newnorm)
+        meanold = torch.mean(oldnorm)
+        gamma = meanold / meannew
+        print("alignweights,gamma=", gamma)
+        self.occe_head.weight.data[-increment:, :] *= gamma
+
     def generate_fc(self, in_dim, out_dim):
         fc = SimpleLinear(in_dim, out_dim)
 
@@ -158,11 +187,15 @@ class IncrementalNet(BaseNet):
         x = self.convnet(x)
         out = self.fc(x["features"])
         out.update(x)
+        if self._dual_head :
+            out2 = self.occe_head(x["features"])
+            out2.update(x)
+
         if hasattr(self, "gradcam") and self.gradcam:
             out["gradcam_gradients"] = self._gradcam_gradients
             out["gradcam_activations"] = self._gradcam_activations
 
-        return out
+        return out if not self._dual_head else (out, out2)
 
     def unset_gradcam_hook(self):
         self._gradcam_hooks[0].remove()
