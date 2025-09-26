@@ -8,10 +8,12 @@ from utils.toolkit import count_parameters
 import os
 import numpy as np
 
+HARD_DRIVE_PATH = '/media/data/ctsiggiropoulos/' 
 
 def train(args):
     seed_list = copy.deepcopy(args["seed"])
-    gamma_list = copy.deepcopy(args["gamma"])
+    gamma = args.get("gamma", None)
+    gamma_list = copy.deepcopy(gamma) if gamma is not None else [None]
     device = copy.deepcopy(args["device"])
     kd_gamma = args.get("kd_gamma", None)
     kd_gamma_list =  copy.deepcopy(kd_gamma) if kd_gamma is not None else [None]
@@ -32,25 +34,26 @@ def train(args):
 def _train(args):
 
     init_cls = 0 if args ["init_cls"] == args["increment"] else args["init_cls"]
-    logs_name = "logs/{}/{}/{}/{}".format(args["model_name"],args["dataset"], init_cls, args['increment'])
-    
+
+    logs_name  = "logs/{}/{}_init={}_incr={}".format(args["model_name"],args["dataset"], init_cls, args['increment'])
+    logs_name += '/gamma=%s_kd_gamma=%s_seed=%d/' % (str(args['gamma']).replace('.', "_"), str(args['kd_gamma']).replace('.', "_"), args['seed'])
+
+
     if not os.path.exists(logs_name):
         os.makedirs(logs_name)
+    if not os.path.exists(HARD_DRIVE_PATH + logs_name):
+        os.makedirs(HARD_DRIVE_PATH + logs_name)
 
-    logfilename = "logs/{}/{}/{}/{}/{}_{}_{}".format(
-        args["model_name"],
-        args["dataset"],
-        init_cls,
-        args["increment"],
-        args["prefix"],
-        args["seed"],
-        args["convnet_type"],
-    )
+    logfilename = logs_name + 'logfile.log'
+    
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(filename)s] => %(message)s",
         handlers=[
-            logging.FileHandler(filename=logfilename + ".log"),
+            logging.FileHandler(filename=logfilename),
             logging.StreamHandler(sys.stdout),
         ],
     )
@@ -80,6 +83,8 @@ def _train(args):
         model.incremental_train(data_manager)
         cnn_accy, nme_accy = model.eval_task()
         model.after_task()
+
+        model.save_checkpoint(HARD_DRIVE_PATH + logs_name + "model_on_task")
 
         if nme_accy is not None:
             logging.info("CNN: {}".format(cnn_accy["grouped"]))
@@ -113,15 +118,11 @@ def _train(args):
             logging.info("Average Accuracy (CNN): {}".format(sum(cnn_curve["top1"])/len(cnn_curve["top1"])))
             logging.info("Average Accuracy (NME): {}".format(sum(nme_curve["top1"])/len(nme_curve["top1"])))
         else:
-            if model._dual_head :
-                cnn_accy, cnn_accy2 = cnn_accy # CE head, OCCE head
             
-            logging.info("CNN (CE head): {}".format(cnn_accy["grouped"]))
-            if model._dual_head :
-                logging.info("CNN (OCCE head): {}".format(cnn_accy2["grouped"]))
+            logging.info("CNN : {}".format(cnn_accy["grouped"]))
 
-            cnn_curve["top1"].append(cnn_accy["top1"])  # CE head
-            cnn_curve["top5"].append(cnn_accy["top5"])  # CE head
+            cnn_curve["top1"].append(cnn_accy["top1"])  
+            cnn_curve["top5"].append(cnn_accy["top5"])  
 
             if not model._dual_head :
                 cnn_keys = [key for key in cnn_accy["grouped"].keys() if '-' in key]
