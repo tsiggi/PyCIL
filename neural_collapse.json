@@ -1,0 +1,15 @@
+{
+    "dataset": "cifar100",
+    "model_name": "lwf",
+    "convnet_type": "resnet32",
+    "memory_size": 2000,
+    "gamma": [0, 0.05, 0.1, 0.2, 0.5],
+    "kd_gamma":  [0, 0.05, 0.1, 0.2, 0.5],
+    "seed": [0, 1, 2],
+    "device": ["0"],
+    "init_cls": 10,
+    "increment": 10,
+    "shuffle": true, 
+    "on_new_classes" : true,
+    "save_test_metrics" : true
+}
